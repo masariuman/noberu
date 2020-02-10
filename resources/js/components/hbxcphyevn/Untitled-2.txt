@@ -1,0 +1,25 @@
+SQLSTATE[42000]: Syntax error or access violation: 1075 Incorrect table definition; there can be only one auto column and it must be defined as a key (SQL: create table `va` (`id` bigint unsigned not null auto_increment primary key, `user_id` bigint unsigned not null, `ref` varchar(12) not null, `va` varchar(40) not null, `nama` varchar(40) not null, `layanan` varchar(40) not null, `kodelayanan` int not null auto_increment primary key, `jenisbayar` varchar(40) not null, `kodejenisbyr` varchar(12) not null, `noid` varchar(20) not null, `tagihan` varchar(19) not null, `flag` enum('F', 'P') not null, `expired` datetime not null,
+`reserve` varchar(10) not null, `description` varchar(60) not null, `status_inquiry` enum('0', '1') not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+---------------------------
+
+<div className="widget-content-wrapper">
+                                    <div className="widget-content-left">
+                                        <div className="btn-group">
+                                            <a data-togel="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn">
+                                                <img width="42" className="rounded-circle" src="/sjabloon/assets/images/avatars/1.jpg" alt="" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="widget-content-left  ml-3 header-user-info">
+                                        <div className="widget-heading">
+                                            Iwan Susanto
+                                    </div>
+                                        <div className="widget-subheading">
+                                            Teller
+                                    </div>
+                                    <a href="logout"> <div className="widget-heading">
+                                        Logout <i class="fa fa-fw" aria-hidden="true" title="Copy to use power-off"></i>
+                                    </div></a>
+                                    </div>
+                                </div>
