@@ -10,17 +10,18 @@ import ChildIndex from "./components/child/Index";
 import ParentIndex from "./components/parent/Index";
 import CategoryIndex from "./components/category/Index";
 import TagIndex from "./components/tag/Index";
+import Empatkosongempat from "./components/Empatkosongempat";
 
 if (document.getElementById("root")) {
     ReactDOM.render(
         <BrowserRouter>
             <Header />
-            <Switch>
-                <Setting />
-                <div className="app-main">
-                    <Sidebar />
-                    <div className="app-main__outer">
-                        <div className="app-main__inner">
+            <Setting />
+            <div className="app-main">
+                <Sidebar />
+                <div className="app-main__outer">
+                    <div className="app-main__inner">
+                        <Switch>
                             <Route
                                 exact
                                 path="/nanael_masariuman_hachiel"
@@ -46,12 +47,12 @@ if (document.getElementById("root")) {
                                 path="/nanael_masariuman_hachiel/tag"
                                 component={TagIndex}
                             />
-                        </div>
-                        <Footer />
+                            <Empatkosongempat />
+                        </Switch>
                     </div>
+                    <Footer />
                 </div>
-                <Empatkosongempat />
-            </Switch>
+            </div>
         </BrowserRouter>,
 
         document.getElementById("root")
