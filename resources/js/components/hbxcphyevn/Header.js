@@ -110,7 +110,7 @@ class Header extends Component {
                                     <div className="widget-content-left  ml-3 header-user-info">
                                         <div className="widget-heading">
                                             {!this.state.shashin.name
-                                                ? "Anonymous"
+                                                ? "MasariuMan"
                                                 : this.state.shashin.name}
                                         </div>
                                         <div className="widget-subheading"></div>

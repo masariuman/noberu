@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Footer extends Component {
     render() {
@@ -9,13 +9,19 @@ class Footer extends Component {
                         <div className="app-footer-left">
                             <ul className="nav">
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        Rumah Sakit Universitas Tanjungpura Pontianak
+                                    <a
+                                        href="http://masariuman.xyz/"
+                                        className="nav-link"
+                                    >
+                                        Arif Setiawan
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        Bank BTN
+                                    <a
+                                        href="http://masariuman.xyz/"
+                                        className="nav-link"
+                                    >
+                                        MasariuMan
                                     </a>
                                 </li>
                             </ul>
@@ -23,16 +29,19 @@ class Footer extends Component {
                         <div className="app-footer-right">
                             <ul className="nav">
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link">
+                                    <a
+                                        href="http://masariuman.xyz/"
+                                        className="nav-link"
+                                    >
                                         Copyright &copy; 2020
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <div className="badge badge-warning mr-1 ml-0">
-                                            <small>IT</small>
-                                        </div>
-                                        RSUNTAN
+                                    <a
+                                        href="http://masariuman.xyz/"
+                                        className="nav-link"
+                                    >
+                                        MasariuMan
                                     </a>
                                 </li>
                             </ul>

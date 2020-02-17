@@ -73183,30 +73183,28 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "http://masariuman.xyz/",
         className: "nav-link"
-      }, "Rumah Sakit Universitas Tanjungpura Pontianak")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Arif Setiawan")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "http://masariuman.xyz/",
         className: "nav-link"
-      }, "Bank BTN")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "MasariuMan")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-footer-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "http://masariuman.xyz/",
         className: "nav-link"
       }, "Copyright \xA9 2020")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "http://masariuman.xyz/",
         className: "nav-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "badge badge-warning mr-1 ml-0"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "IT")), "RSUNTAN")))))));
+      }, "MasariuMan")))))));
     }
   }]);
 
@@ -73366,7 +73364,7 @@ function (_Component) {
         className: "widget-content-left  ml-3 header-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-heading"
-      }, !this.state.shashin.name ? "Anonymous" : this.state.shashin.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, !this.state.shashin.name ? "MasariuMan" : this.state.shashin.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-subheading"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "logout"
