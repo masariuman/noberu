@@ -2,39 +2,39 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            shashin: "",
-            photo: ""
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         shashin: "",
+    //         photo: ""
+    //     };
+    // }
 
-    getShashin() {
-        axios.get("/shashin").then(response =>
-            this.setState({
-                shashin: response.data.shashin
-            })
-        );
-    }
+    // getShashin() {
+    //     axios.get("/shashin").then(response =>
+    //         this.setState({
+    //             shashin: response.data.shashin
+    //         })
+    //     );
+    // }
 
-    ifPhotoNull() {
-        if (this.state.shashin.photo === null) {
-            this.setState({
-                photo: "nophoto.png"
-            });
-        }
-    }
+    // ifPhotoNull() {
+    //     if (this.state.shashin.photo === null) {
+    //         this.setState({
+    //             photo: "nophoto.png"
+    //         });
+    //     }
+    // }
 
-    testShashin() {
-        axios
-            .get("/shashin")
-            .then(response => console.log(response.data.shashin));
-    }
+    // testShashin() {
+    //     axios
+    //         .get("/shashin")
+    //         .then(response => console.log(response.data.shashin));
+    // }
 
-    componentDidMount() {
-        this.getShashin();
-    }
+    // componentDidMount() {
+    //     this.getShashin();
+    // }
 
     render() {
         return (
@@ -95,13 +95,7 @@ class Header extends Component {
                                                 <img
                                                     width="42"
                                                     className="rounded-circle"
-                                                    src={`/hbxcphyevn/t/poto/${
-                                                        !this.state.shashin
-                                                            .photo
-                                                            ? "nophoto.png"
-                                                            : this.state.shashin
-                                                                  .photo
-                                                    }`}
+                                                    src={`/hbxcphyevn/t/poto/nophoto.png`}
                                                     alt=""
                                                 />
                                             </a>
@@ -109,9 +103,7 @@ class Header extends Component {
                                     </div>
                                     <div className="widget-content-left  ml-3 header-user-info">
                                         <div className="widget-heading">
-                                            {!this.state.shashin.name
-                                                ? "MasariuMan"
-                                                : this.state.shashin.name}
+                                            MasariuMan
                                         </div>
                                         <div className="widget-subheading"></div>
                                         <a href="logout">

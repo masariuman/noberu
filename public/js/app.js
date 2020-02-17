@@ -72992,7 +72992,6 @@ if (document.getElementById("root")) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-main__inner"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    exact: true,
     path: "/nanael_masariuman_hachiel",
     component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -73132,7 +73131,7 @@ function (_Component) {
   _createClass(Category, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "category novel");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "category novell");
     }
   }]);
 
@@ -73388,53 +73387,43 @@ var Header =
 function (_Component) {
   _inherits(Header, _Component);
 
-  function Header(props) {
-    var _this;
-
+  function Header() {
     _classCallCheck(this, Header);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
-    _this.state = {
-      shashin: "",
-      photo: ""
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Header).apply(this, arguments));
   }
 
   _createClass(Header, [{
-    key: "getShashin",
-    value: function getShashin() {
-      var _this2 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/shashin").then(function (response) {
-        return _this2.setState({
-          shashin: response.data.shashin
-        });
-      });
-    }
-  }, {
-    key: "ifPhotoNull",
-    value: function ifPhotoNull() {
-      if (this.state.shashin.photo === null) {
-        this.setState({
-          photo: "nophoto.png"
-        });
-      }
-    }
-  }, {
-    key: "testShashin",
-    value: function testShashin() {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/shashin").then(function (response) {
-        return console.log(response.data.shashin);
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.getShashin();
-    }
-  }, {
     key: "render",
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         shashin: "",
+    //         photo: ""
+    //     };
+    // }
+    // getShashin() {
+    //     axios.get("/shashin").then(response =>
+    //         this.setState({
+    //             shashin: response.data.shashin
+    //         })
+    //     );
+    // }
+    // ifPhotoNull() {
+    //     if (this.state.shashin.photo === null) {
+    //         this.setState({
+    //             photo: "nophoto.png"
+    //         });
+    //     }
+    // }
+    // testShashin() {
+    //     axios
+    //         .get("/shashin")
+    //         .then(response => console.log(response.data.shashin));
+    // }
+    // componentDidMount() {
+    //     this.getShashin();
+    // }
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-header header-shadow bg-sunny-morning header-text-dark"
@@ -73492,13 +73481,13 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         width: "42",
         className: "rounded-circle",
-        src: "/hbxcphyevn/t/poto/".concat(!this.state.shashin.photo ? "nophoto.png" : this.state.shashin.photo),
+        src: "/hbxcphyevn/t/poto/nophoto.png",
         alt: ""
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-content-left  ml-3 header-user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-heading"
-      }, !this.state.shashin.name ? "MasariuMan" : this.state.shashin.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "MasariuMan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-subheading"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "logout"
