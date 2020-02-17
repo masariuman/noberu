@@ -78,7 +78,7 @@ class Sidebar extends Component {
                                     className="addva {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 1)}
                                 >
-                                    <i className="metismenu-icon pe-7s-add-user"></i>
+                                    <i className="metismenu-icon pe-7s-bookmarks"></i>
                                     Child Novel
                                 </Link>
                             </li>
@@ -88,7 +88,7 @@ class Sidebar extends Component {
                                     className="history {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 1)}
                                 >
-                                    <i className="metismenu-icon pe-7s-note2"></i>
+                                    <i className="metismenu-icon pe-7s-notebook"></i>
                                     Parent Novel
                                 </Link>
                             </li>
@@ -98,7 +98,7 @@ class Sidebar extends Component {
                                     className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 2)}
                                 >
-                                    <i className="metismenu-icon pe-7s-config"></i>
+                                    <i className="metismenu-icon pe-7s-menu"></i>
                                     Category
                                 </Link>
                             </li>
@@ -110,7 +110,7 @@ class Sidebar extends Component {
                                     className="petunjuk {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 2)}
                                 >
-                                    <i className="metismenu-icon pe-7s-light"></i>
+                                    <i className="metismenu-icon pe-7s-pin"></i>
                                     Tag
                                 </Link>
                             </li>

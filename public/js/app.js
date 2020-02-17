@@ -73499,19 +73499,19 @@ function (_Component) {
         className: "addva {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 1)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "metismenu-icon pe-7s-add-user"
+        className: "metismenu-icon pe-7s-bookmarks"
       }), "Child Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/parent",
         className: "history {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 1)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "metismenu-icon pe-7s-note2"
+        className: "metismenu-icon pe-7s-notebook"
       }), "Parent Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/category",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 2)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "metismenu-icon pe-7s-config"
+        className: "metismenu-icon pe-7s-menu"
       }), "Category")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/tag",
         "data-toggle": "modal",
@@ -73519,7 +73519,7 @@ function (_Component) {
         className: "petunjuk {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 2)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "metismenu-icon pe-7s-light"
+        className: "metismenu-icon pe-7s-pin"
       }), "Tag")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/logout",
         className: "{this.state.activeIndex==0 ? 'mm-active': null}",
