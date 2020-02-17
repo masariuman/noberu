@@ -69,50 +69,50 @@ class Sidebar extends Component {
                                     onClick={this.toggleClass.bind(this, 0)}
                                 >
                                     <i className="metismenu-icon pe-7s-info"></i>
-                                    Menu 1
+                                    Dashboard
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel/menu2`}
+                                    to={`/nanael_masariuman_hachiel/child`}
                                     className="addva {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 1)}
                                 >
                                     <i className="metismenu-icon pe-7s-add-user"></i>
-                                    Menu 2
+                                    Child Novel
                                 </Link>
                             </li>
                             <li>
-                                <a
-                                    href="/history"
+                                <Link
+                                    to={`/nanael_masariuman_hachiel/parent`}
                                     className="history {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 1)}
                                 >
                                     <i className="metismenu-icon pe-7s-note2"></i>
-                                    Menu 3
-                                </a>
+                                    Parent Novel
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="/account"
+                                <Link
+                                    to={`/nanael_masariuman_hachiel/category`}
                                     className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 2)}
                                 >
                                     <i className="metismenu-icon pe-7s-config"></i>
-                                    Menu 4
-                                </a>
+                                    Category
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    to={`/nanael_masariuman_hachiel/tag`}
                                     data-toggle="modal"
                                     data-target=".bd-example-modal-lg"
                                     className="petunjuk {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 2)}
                                 >
                                     <i className="metismenu-icon pe-7s-light"></i>
-                                    Menu 5
-                                </a>
+                                    Tag
+                                </Link>
                             </li>
                             <li>
                                 <a
