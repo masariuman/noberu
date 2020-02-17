@@ -72992,6 +72992,7 @@ if (document.getElementById("root")) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-main__inner"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
     path: "/nanael_masariuman_hachiel",
     component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -73131,7 +73132,7 @@ function (_Component) {
   _createClass(Category, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "category novell");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "category novel");
     }
   }]);
 
@@ -73247,7 +73248,7 @@ function (_Component) {
   _createClass(DashboardIndex, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "menu1"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Dashboard"));
     }
   }]);
 
@@ -73626,27 +73627,25 @@ function (_Component) {
       }), "Child Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/parent",
         className: "history {this.state.activeIndex==0 ? 'mm-active': null}",
-        onClick: this.toggleClass.bind(this, 1)
+        onClick: this.toggleClass.bind(this, 2)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-notebook"
       }), "Parent Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/category",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
-        onClick: this.toggleClass.bind(this, 2)
+        onClick: this.toggleClass.bind(this, 3)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-menu"
       }), "Category")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/tag",
-        "data-toggle": "modal",
-        "data-target": ".bd-example-modal-lg",
-        className: "petunjuk {this.state.activeIndex==0 ? 'mm-active': null}",
-        onClick: this.toggleClass.bind(this, 2)
+        className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
+        onClick: this.toggleClass.bind(this, 4)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-pin"
       }), "Tag")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/logout",
         className: "{this.state.activeIndex==0 ? 'mm-active': null}",
-        onClick: this.toggleClass.bind(this, 3)
+        onClick: this.toggleClass.bind(this, 5)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-power"
       }), "Logout"))))));

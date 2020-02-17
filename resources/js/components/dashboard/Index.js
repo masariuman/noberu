@@ -5,7 +5,7 @@ class DashboardIndex extends Component {
     render() {
         return (
             <div>
-                <div>menu1</div>
+                <div>Dashboard</div>
             </div>
         );
     }

@@ -20,6 +20,7 @@ if (document.getElementById("root")) {
                     <div className="app-main__inner">
                         <Switch>
                             <Route
+                                exact
                                 path="/nanael_masariuman_hachiel"
                                 component={DashboardIndex}
                             />

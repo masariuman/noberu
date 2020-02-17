@@ -86,7 +86,7 @@ class Sidebar extends Component {
                                 <Link
                                     to={`/nanael_masariuman_hachiel/parent`}
                                     className="history {this.state.activeIndex==0 ? 'mm-active': null}"
-                                    onClick={this.toggleClass.bind(this, 1)}
+                                    onClick={this.toggleClass.bind(this, 2)}
                                 >
                                     <i className="metismenu-icon pe-7s-notebook"></i>
                                     Parent Novel
@@ -96,7 +96,7 @@ class Sidebar extends Component {
                                 <Link
                                     to={`/nanael_masariuman_hachiel/category`}
                                     className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
-                                    onClick={this.toggleClass.bind(this, 2)}
+                                    onClick={this.toggleClass.bind(this, 3)}
                                 >
                                     <i className="metismenu-icon pe-7s-menu"></i>
                                     Category
@@ -105,10 +105,8 @@ class Sidebar extends Component {
                             <li>
                                 <Link
                                     to={`/nanael_masariuman_hachiel/tag`}
-                                    data-toggle="modal"
-                                    data-target=".bd-example-modal-lg"
-                                    className="petunjuk {this.state.activeIndex==0 ? 'mm-active': null}"
-                                    onClick={this.toggleClass.bind(this, 2)}
+                                    className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
+                                    onClick={this.toggleClass.bind(this, 4)}
                                 >
                                     <i className="metismenu-icon pe-7s-pin"></i>
                                     Tag
@@ -118,7 +116,7 @@ class Sidebar extends Component {
                                 <a
                                     href="/logout"
                                     className="{this.state.activeIndex==0 ? 'mm-active': null}"
-                                    onClick={this.toggleClass.bind(this, 3)}
+                                    onClick={this.toggleClass.bind(this, 5)}
                                 >
                                     <i className="metismenu-icon pe-7s-power"></i>
                                     Logout
