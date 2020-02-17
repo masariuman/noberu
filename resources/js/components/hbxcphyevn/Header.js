@@ -38,7 +38,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="app-header header-shadow bg-sunny-morning header-text-dark">
+            <div className="app-header header-shadow bg-happy-green header-text-light">
                 <div className="app-header__logo">
                     <div className="loogoo">MasariuMan&nbsp;</div>
                     <div className="header__pane ml-auto">
@@ -95,7 +95,7 @@ class Header extends Component {
                                                 <img
                                                     width="42"
                                                     className="rounded-circle"
-                                                    src={`/hbxcphyevn/t/poto/nophoto.png`}
+                                                    src={`/hbxcphyevn/t/poto/nophoto_pohon.png`}
                                                     alt=""
                                                 />
                                             </a>

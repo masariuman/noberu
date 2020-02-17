@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Setting from "./components/hbxcphyevn/Setting";
 import Header from "./components/hbxcphyevn/Header";
 import Sidebar from "./components/hbxcphyevn/Sidebar";
 import Footer from "./components/hbxcphyevn/Footer";
@@ -14,11 +15,12 @@ if (document.getElementById("root")) {
     ReactDOM.render(
         <BrowserRouter>
             <Header />
-            <div className="app-main">
-                <Sidebar />
-                <div className="app-main__outer">
-                    <div className="app-main__inner">
-                        <Switch>
+            <Switch>
+                <Setting />
+                <div className="app-main">
+                    <Sidebar />
+                    <div className="app-main__outer">
+                        <div className="app-main__inner">
                             <Route
                                 exact
                                 path="/nanael_masariuman_hachiel"
@@ -44,11 +46,12 @@ if (document.getElementById("root")) {
                                 path="/nanael_masariuman_hachiel/tag"
                                 component={TagIndex}
                             />
-                        </Switch>
+                        </div>
+                        <Footer />
                     </div>
-                    <Footer />
                 </div>
-            </div>
+                <Empatkosongempat />
+            </Switch>
         </BrowserRouter>,
 
         document.getElementById("root")

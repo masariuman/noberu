@@ -72964,14 +72964,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _components_hbxcphyevn_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/hbxcphyevn/Header */ "./resources/js/components/hbxcphyevn/Header.js");
-/* harmony import */ var _components_hbxcphyevn_Sidebar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/hbxcphyevn/Sidebar */ "./resources/js/components/hbxcphyevn/Sidebar.js");
-/* harmony import */ var _components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/hbxcphyevn/Footer */ "./resources/js/components/hbxcphyevn/Footer.js");
-/* harmony import */ var _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dashboard/Index */ "./resources/js/components/dashboard/Index.js");
-/* harmony import */ var _components_child_Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/child/Index */ "./resources/js/components/child/Index.js");
-/* harmony import */ var _components_parent_Index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/parent/Index */ "./resources/js/components/parent/Index.js");
-/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
-/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
+/* harmony import */ var _components_hbxcphyevn_Setting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/hbxcphyevn/Setting */ "./resources/js/components/hbxcphyevn/Setting.js");
+/* harmony import */ var _components_hbxcphyevn_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/hbxcphyevn/Header */ "./resources/js/components/hbxcphyevn/Header.js");
+/* harmony import */ var _components_hbxcphyevn_Sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/hbxcphyevn/Sidebar */ "./resources/js/components/hbxcphyevn/Sidebar.js");
+/* harmony import */ var _components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/hbxcphyevn/Footer */ "./resources/js/components/hbxcphyevn/Footer.js");
+/* harmony import */ var _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dashboard/Index */ "./resources/js/components/dashboard/Index.js");
+/* harmony import */ var _components_child_Index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/child/Index */ "./resources/js/components/child/Index.js");
+/* harmony import */ var _components_parent_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/parent/Index */ "./resources/js/components/parent/Index.js");
+/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
+/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
+
 
 
 
@@ -72985,33 +72987,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 if (document.getElementById("root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Setting__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-main"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Sidebar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-main__outer"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-main__inner"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/nanael_masariuman_hachiel",
-    component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/nanael_masariuman_hachiel/child",
-    component: _components_child_Index__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _components_child_Index__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/nanael_masariuman_hachiel/parent",
-    component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/nanael_masariuman_hachiel/category",
-    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/nanael_masariuman_hachiel/tag",
-    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_10__["default"]
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)))), document.getElementById("root"));
+    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
 }
 
 /***/ }),
@@ -73427,7 +73429,7 @@ function (_Component) {
     // }
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "app-header header-shadow bg-sunny-morning header-text-dark"
+        className: "app-header header-shadow bg-happy-green header-text-light"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-header__logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -73482,7 +73484,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         width: "42",
         className: "rounded-circle",
-        src: "/hbxcphyevn/t/poto/nophoto.png",
+        src: "/hbxcphyevn/t/poto/nophoto_pohon.png",
         alt: ""
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "widget-content-left  ml-3 header-user-info"
@@ -73506,6 +73508,431 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./resources/js/components/hbxcphyevn/Setting.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/hbxcphyevn/Setting.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Setting =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Setting, _Component);
+
+  function Setting() {
+    _classCallCheck(this, Setting);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Setting).apply(this, arguments));
+  }
+
+  _createClass(Setting, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ui-theme-settings"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        id: "TooltipDemo",
+        className: "btn-open-options btn btn-warning"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-cog fa-w-16 fa-spin fa-2x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-settings__inner"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "scrollbar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-settings__options-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "themeoptions-heading"
+      }, "Layout Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "p-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content p-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left mr-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch has-switch switch-container-class",
+        "data-class": "fixed-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch-animate switch-on"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        checked: true,
+        "data-toggle": "toggle",
+        "data-onstyle": "success"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-heading"
+      }, "Fixed Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-subheading"
+      }, "Makes the header top fixed, always visible!"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content p-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left mr-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch has-switch switch-container-class",
+        "data-class": "fixed-sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch-animate switch-on"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        checked: true,
+        "data-toggle": "toggle",
+        "data-onstyle": "success"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-heading"
+      }, "Fixed Sidebar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-subheading"
+      }, "Makes the sidebar left fixed, always visible!"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content p-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left mr-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch has-switch switch-container-class",
+        "data-class": "fixed-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "switch-animate switch-off"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "checkbox",
+        "data-toggle": "toggle",
+        "data-onstyle": "success"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-content-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-heading"
+      }, "Fixed Footer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "widget-subheading"
+      }, "Makes the app footer bottom fixed, always visible!"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "themeoptions-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Header Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-header-cs-class",
+        "data-class": ""
+      }, "Restore Default")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "p-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "pb-2"
+      }, "Choose Color Scheme"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-settings-swatches"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-primary switch-header-cs-class",
+        "data-class": "bg-primary header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-secondary switch-header-cs-class",
+        "data-class": "bg-secondary header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-success switch-header-cs-class",
+        "data-class": "bg-success header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-info switch-header-cs-class",
+        "data-class": "bg-info header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-warning switch-header-cs-class",
+        "data-class": "bg-warning header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-danger switch-header-cs-class",
+        "data-class": "bg-danger header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-light switch-header-cs-class",
+        "data-class": "bg-light header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-dark switch-header-cs-class",
+        "data-class": "bg-dark header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-focus switch-header-cs-class",
+        "data-class": "bg-focus header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-alternate switch-header-cs-class",
+        "data-class": "bg-alternate header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "divider"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-vicious-stance switch-header-cs-class",
+        "data-class": "bg-vicious-stance header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-midnight-bloom switch-header-cs-class",
+        "data-class": "bg-midnight-bloom header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-night-sky switch-header-cs-class",
+        "data-class": "bg-night-sky header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-slick-carbon switch-header-cs-class",
+        "data-class": "bg-slick-carbon header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-asteroid switch-header-cs-class",
+        "data-class": "bg-asteroid header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-royal switch-header-cs-class",
+        "data-class": "bg-royal header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-warm-flame switch-header-cs-class",
+        "data-class": "bg-warm-flame header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-night-fade switch-header-cs-class",
+        "data-class": "bg-night-fade header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-sunny-morning switch-header-cs-class",
+        "data-class": "bg-sunny-morning header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-tempting-azure switch-header-cs-class",
+        "data-class": "bg-tempting-azure header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-amy-crisp switch-header-cs-class",
+        "data-class": "bg-amy-crisp header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-heavy-rain switch-header-cs-class",
+        "data-class": "bg-heavy-rain header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-mean-fruit switch-header-cs-class",
+        "data-class": "bg-mean-fruit header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-malibu-beach switch-header-cs-class",
+        "data-class": "bg-malibu-beach header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-deep-blue switch-header-cs-class",
+        "data-class": "bg-deep-blue header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-ripe-malin switch-header-cs-class",
+        "data-class": "bg-ripe-malin header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-arielle-smile switch-header-cs-class",
+        "data-class": "bg-arielle-smile header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-plum-plate switch-header-cs-class",
+        "data-class": "bg-plum-plate header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-fisher switch-header-cs-class",
+        "data-class": "bg-happy-fisher header-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-itmeo switch-header-cs-class",
+        "data-class": "bg-happy-itmeo header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-mixed-hopes switch-header-cs-class",
+        "data-class": "bg-mixed-hopes header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-strong-bliss switch-header-cs-class",
+        "data-class": "bg-strong-bliss header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-grow-early switch-header-cs-class",
+        "data-class": "bg-grow-early header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-love-kiss switch-header-cs-class",
+        "data-class": "bg-love-kiss header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-premium-dark switch-header-cs-class",
+        "data-class": "bg-premium-dark header-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-green switch-header-cs-class",
+        "data-class": "bg-happy-green header-text-light"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "themeoptions-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Sidebar Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-sidebar-cs-class",
+        "data-class": ""
+      }, "Restore Default")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "p-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "pb-2"
+      }, "Choose Color Scheme"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-settings-swatches"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-primary switch-sidebar-cs-class",
+        "data-class": "bg-primary sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-secondary switch-sidebar-cs-class",
+        "data-class": "bg-secondary sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-success switch-sidebar-cs-class",
+        "data-class": "bg-success sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-info switch-sidebar-cs-class",
+        "data-class": "bg-info sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-warning switch-sidebar-cs-class",
+        "data-class": "bg-warning sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-danger switch-sidebar-cs-class",
+        "data-class": "bg-danger sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-light switch-sidebar-cs-class",
+        "data-class": "bg-light sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-dark switch-sidebar-cs-class",
+        "data-class": "bg-dark sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-focus switch-sidebar-cs-class",
+        "data-class": "bg-focus sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-alternate switch-sidebar-cs-class",
+        "data-class": "bg-alternate sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "divider"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-vicious-stance switch-sidebar-cs-class",
+        "data-class": "bg-vicious-stance sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-midnight-bloom switch-sidebar-cs-class",
+        "data-class": "bg-midnight-bloom sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-night-sky switch-sidebar-cs-class",
+        "data-class": "bg-night-sky sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-slick-carbon switch-sidebar-cs-class",
+        "data-class": "bg-slick-carbon sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-asteroid switch-sidebar-cs-class",
+        "data-class": "bg-asteroid sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-royal switch-sidebar-cs-class",
+        "data-class": "bg-royal sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-warm-flame switch-sidebar-cs-class",
+        "data-class": "bg-warm-flame sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-night-fade switch-sidebar-cs-class",
+        "data-class": "bg-night-fade sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-sunny-morning switch-sidebar-cs-class",
+        "data-class": "bg-sunny-morning sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-tempting-azure switch-sidebar-cs-class",
+        "data-class": "bg-tempting-azure sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-amy-crisp switch-sidebar-cs-class",
+        "data-class": "bg-amy-crisp sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-heavy-rain switch-sidebar-cs-class",
+        "data-class": "bg-heavy-rain sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-mean-fruit switch-sidebar-cs-class",
+        "data-class": "bg-mean-fruit sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-malibu-beach switch-sidebar-cs-class",
+        "data-class": "bg-malibu-beach sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-deep-blue switch-sidebar-cs-class",
+        "data-class": "bg-deep-blue sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-ripe-malin switch-sidebar-cs-class",
+        "data-class": "bg-ripe-malin sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-arielle-smile switch-sidebar-cs-class",
+        "data-class": "bg-arielle-smile sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-plum-plate switch-sidebar-cs-class",
+        "data-class": "bg-plum-plate sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-fisher switch-sidebar-cs-class",
+        "data-class": "bg-happy-fisher sidebar-text-dark"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-itmeo switch-sidebar-cs-class",
+        "data-class": "bg-happy-itmeo sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-mixed-hopes switch-sidebar-cs-class",
+        "data-class": "bg-mixed-hopes sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-strong-bliss switch-sidebar-cs-class",
+        "data-class": "bg-strong-bliss sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-grow-early switch-sidebar-cs-class",
+        "data-class": "bg-grow-early sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-love-kiss switch-sidebar-cs-class",
+        "data-class": "bg-love-kiss sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-premium-dark switch-sidebar-cs-class",
+        "data-class": "bg-premium-dark sidebar-text-light"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "swatch-holder bg-happy-green switch-sidebar-cs-class",
+        "data-class": "bg-happy-green sidebar-text-light"
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "themeoptions-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Main Content Options"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn-pill btn-shadow btn-wide ml-auto active btn btn-focus btn-sm"
+      }, "Restore Default")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "p-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "list-group-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "pb-2"
+      }, "Page Section Tabs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-settings-swatches"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        role: "group",
+        className: "mt-2 btn-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn-wide btn-shadow btn-primary btn btn-secondary switch-theme-class",
+        "data-class": "body-tabs-line"
+      }, "Line"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn-wide btn-shadow btn-primary active btn btn-secondary switch-theme-class",
+        "data-class": "body-tabs-shadow"
+      }, "Shadow"))))))))));
+    }
+  }]);
+
+  return Setting;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Setting);
 
 /***/ }),
 
@@ -73571,7 +73998,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "app-sidebar sidebar-shadow bg-sunny-morning sidebar-text-dark"
+        className: "app-sidebar sidebar-shadow bg-happy-green sidebar-text-light"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-header__logo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
