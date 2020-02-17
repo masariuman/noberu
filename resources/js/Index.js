@@ -5,7 +5,7 @@ import Header from "./components/hbxcphyevn/Header";
 import Sidebar from "./components/hbxcphyevn/Sidebar";
 import Footer from "./components/hbxcphyevn/Footer";
 import DashboardIndex from "./components/dashboard/Index";
-import Menu2 from "./components/menu2/Index";
+import Child from "./components/child/Index";
 
 if (document.getElementById("root")) {
     ReactDOM.render(
