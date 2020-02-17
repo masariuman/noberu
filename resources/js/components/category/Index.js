@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Category extends Component {
     render() {
-        return <div>category novel</div>;
+        return <div>category novell</div>;
     }
 }
 
