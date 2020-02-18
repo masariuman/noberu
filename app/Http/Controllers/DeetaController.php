@@ -9,9 +9,9 @@ class DeetaController extends Controller
 {
     public function deeta_tag()
     {
-        $shashin = Auth::user();
+        $tag = Tag::user();
 		return response()->json([
-			'shashin' => $shashin,
+			'deeta_tag' => $tag,
 		]);
     }
     /**
