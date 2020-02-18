@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
 
 class DeetaController extends Controller
 {
+    public function deeta_tag()
+    {
+        $shashin = Auth::user();
+		return response()->json([
+			'shashin' => $shashin,
+		]);
+    }
     /**
      * Display a listing of the resource.
      *
