@@ -12,6 +12,8 @@
 */
 Auth::routes();
 
+Route::get('/deeta_tag', 'DeetaController@deeta_tag');
+
 Route::group(['middleware'=> 'auth'], function () {
     Route::any('{all}', function () {
         return view('hiyaa');
