@@ -12,7 +12,7 @@
 */
 Auth::routes();
 
-Route::get('/deeta_tag', 'DeetaController@deeta_tag');
+Route::get('/masariuman_tag', 'DeetaController@deeta_tag');
 
 Route::group(['middleware'=> 'auth'], function () {
     Route::any('{all}', function () {

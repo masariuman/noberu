@@ -6,27 +6,31 @@ class Tag extends Component {
         this.state = {
             tag: [],
             pagination: [],
-            url: "/deeta_tag"
+            url: null
         };
         this.loadMore = this.loadMore.bind(this);
     }
 
     getTag() {
-        axios.get(this.state.url).then(response => {
-            this.setState({
-                tag:
-                    this.state.tag.length > 0
-                        ? this.state.tag.concat(response.data.deeta_tag.data)
-                        : response.data.deeta_tag.data,
-                url: response.data.next_page
+        axios
+            .get(this.state.url === null ? "/masariuman_tag" : this.state.url)
+            .then(response => {
+                this.setState({
+                    tag:
+                        this.state.tag.length > 0
+                            ? this.state.tag.concat(
+                                  response.data.deeta_tag.data
+                              )
+                            : response.data.deeta_tag.data,
+                    url: response.data.next_page
+                });
+                this.getPagination(response.data.deeta_tag);
             });
-            this.getPagination(response.data.deeta_tag);
-        });
     }
 
     testTag() {
         axios
-            .get("/deeta_tag")
+            .get("/masariuman_tag")
             .then(response => console.log(response.data.deeta_tag));
     }
 
@@ -86,12 +90,16 @@ class Tag extends Component {
                                 </thead>
                                 <tbody>{this.renderTag()}</tbody>
                             </table>
-                            <button
-                                className="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success"
-                                onClick={this.loadMore}
-                            >
-                                More
-                            </button>
+                            {this.state.pagination.next_page_url ? (
+                                <button
+                                    className="btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success"
+                                    onClick={this.loadMore}
+                                >
+                                    More
+                                </button>
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </div>
                 </div>

@@ -99,7 +99,7 @@ class Sidebar extends Component {
                                     onClick={this.toggleClass.bind(this, 3)}
                                 >
                                     <i className="metismenu-icon pe-7s-menu"></i>
-                                    Category
+                                    Genre
                                 </Link>
                             </li>
                             <li>

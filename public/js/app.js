@@ -74129,7 +74129,7 @@ function (_Component) {
         onClick: this.toggleClass.bind(this, 3)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-menu"
-      }), "Category")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }), "Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/nanael_masariuman_hachiel/tag",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 4)
@@ -74253,7 +74253,7 @@ function (_Component) {
     _this.state = {
       tag: [],
       pagination: [],
-      url: "/deeta_tag"
+      url: null
     };
     _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
     return _this;
@@ -74264,7 +74264,7 @@ function (_Component) {
     value: function getTag() {
       var _this2 = this;
 
-      axios.get(this.state.url).then(function (response) {
+      axios.get(this.state.url === null ? "/masariuman_tag" : this.state.url).then(function (response) {
         _this2.setState({
           tag: _this2.state.tag.length > 0 ? _this2.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
           url: response.data.next_page
@@ -74276,7 +74276,7 @@ function (_Component) {
   }, {
     key: "testTag",
     value: function testTag() {
-      axios.get("/deeta_tag").then(function (response) {
+      axios.get("/masariuman_tag").then(function (response) {
         return console.log(response.data.deeta_tag);
       });
     }
@@ -74335,10 +74335,10 @@ function (_Component) {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag())), this.state.pagination.next_page_url ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success",
         onClick: this.loadMore
-      }, "More")))));
+      }, "More") : ""))));
     }
   }]);
 
