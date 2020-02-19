@@ -74246,16 +74246,65 @@ var Tag =
 function (_Component) {
   _inherits(Tag, _Component);
 
-  function Tag() {
+  function Tag(props) {
+    var _this;
+
     _classCallCheck(this, Tag);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Tag).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tag).call(this, props));
+    _this.state = {
+      tag: [],
+      nomor: []
+    };
+    return _this;
   }
 
   _createClass(Tag, [{
+    key: "getTag",
+    value: function getTag() {
+      var _this2 = this;
+
+      axios.get("/deeta_tag").then(function (response) {
+        return _this2.setState({
+          tag: response.data.deeta_tag.data
+        });
+      });
+    }
+  }, {
+    key: "testTag",
+    value: function testTag() {
+      axios.get("/deeta_tag").then(function (response) {
+        return console.log(response.data.deeta_tag);
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getTag();
+    }
+  }, {
+    key: "renderTag",
+    value: function renderTag() {
+      return this.state.tag.map(function (tag) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+          scope: "row"
+        }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Action"));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "tag novel");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-card mb-3 card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "card-title"
+      }, "TAG NOVEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "table-responsive"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "mb-0 table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag()))))));
     }
   }]);
 

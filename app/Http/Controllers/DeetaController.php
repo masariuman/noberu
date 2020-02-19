@@ -9,9 +9,16 @@ class DeetaController extends Controller
 {
     public function deeta_tag()
     {
-        $tag = Tag::user();
+        $tag = Tag::orderBy("id", "DESC")->paginate(7);
+        $count = 1;
+        $nomor = [];
+        foreach ($tag as $tags) {
+            $tags['nomor'] = $count;
+            $count++;
+        }
+        // dd($tag);
 		return response()->json([
-			'deeta_tag' => $tag,
+            'deeta_tag' => $tag
 		]);
     }
     /**
