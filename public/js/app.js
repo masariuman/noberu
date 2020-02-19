@@ -73659,7 +73659,6 @@ function (_Component) {
         className: "switch-animate switch-on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        checked: true,
         "data-toggle": "toggle",
         "data-onstyle": "success"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -73683,7 +73682,6 @@ function (_Component) {
         className: "switch-animate switch-on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
-        checked: true,
         "data-toggle": "toggle",
         "data-onstyle": "success"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74231,9 +74229,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -74254,8 +74252,10 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tag).call(this, props));
     _this.state = {
       tag: [],
-      nomor: []
+      pagination: [],
+      url: "/deeta_tag"
     };
+    _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -74264,10 +74264,13 @@ function (_Component) {
     value: function getTag() {
       var _this2 = this;
 
-      axios.get("/deeta_tag").then(function (response) {
-        return _this2.setState({
-          tag: response.data.deeta_tag.data
+      axios.get(this.state.url).then(function (response) {
+        _this2.setState({
+          tag: _this2.state.tag.length > 0 ? _this2.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
+          url: response.data.next_page
         });
+
+        _this2.getPagination(response.data.deeta_tag);
       });
     }
   }, {
@@ -74278,15 +74281,43 @@ function (_Component) {
       });
     }
   }, {
+    key: "getPagination",
+    value: function getPagination(data) {
+      var pagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.setState({
+        pagination: pagination
+      });
+    }
+  }, {
+    key: "loadMore",
+    value: function loadMore() {
+      this.setState({
+        url: this.state.pagination.next_page_url
+      });
+      this.componentDidMount();
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.getTag();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
       this.getTag();
     }
   }, {
     key: "renderTag",
     value: function renderTag() {
       return this.state.tag.map(function (tag) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: tag.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
         }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Action"));
       });
@@ -74304,7 +74335,10 @@ function (_Component) {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag()))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success",
+        onClick: this.loadMore
+      }, "More")))));
     }
   }]);
 

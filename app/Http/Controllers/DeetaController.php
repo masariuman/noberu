@@ -9,14 +9,14 @@ class DeetaController extends Controller
 {
     public function deeta_tag()
     {
-        $tag = Tag::orderBy("id", "DESC")->paginate(7);
-        $count = 1;
-        $nomor = [];
+        $pagination = 10;
+        $tag = Tag::orderBy("id", "DESC")->paginate($pagination);
+        $count = $tag->CurrentPage()*$pagination-($pagination-1);
         foreach ($tag as $tags) {
             $tags['nomor'] = $count;
             $count++;
         }
-        // dd($tag);
+        // dd($gets);
 		return response()->json([
             'deeta_tag' => $tag
 		]);

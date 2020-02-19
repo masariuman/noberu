@@ -30,7 +30,6 @@ class Setting extends Component {
                                                         <div className="switch-animate switch-on">
                                                             <input
                                                                 type="checkbox"
-                                                                checked
                                                                 data-toggle="toggle"
                                                                 data-onstyle="success"
                                                             />
@@ -60,7 +59,6 @@ class Setting extends Component {
                                                         <div className="switch-animate switch-on">
                                                             <input
                                                                 type="checkbox"
-                                                                checked
                                                                 data-toggle="toggle"
                                                                 data-onstyle="success"
                                                             />
