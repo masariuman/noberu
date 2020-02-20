@@ -39,7 +39,7 @@ if (document.getElementById("root")) {
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/category"
+                                path="/nanael_masariuman_hachiel/genre"
                                 component={CategoryIndex}
                             />
                             <Route

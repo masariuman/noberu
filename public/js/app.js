@@ -73009,7 +73009,7 @@ if (document.getElementById("root")) {
     component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/category",
+    path: "/nanael_masariuman_hachiel/genre",
     component: _components_category_Index__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
@@ -73182,9 +73182,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -73197,16 +73197,101 @@ var Category =
 function (_Component) {
   _inherits(Category, _Component);
 
-  function Category() {
+  function Category(props) {
+    var _this;
+
     _classCallCheck(this, Category);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Category).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Category).call(this, props));
+    _this.state = {
+      genre: [],
+      pagination: [],
+      url: null
+    };
+    _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Category, [{
+    key: "getGenre",
+    value: function getGenre() {
+      var _this2 = this;
+
+      axios.get(this.state.url === null ? "/masariuman_genre" : this.state.url).then(function (response) {
+        _this2.setState({
+          genre: _this2.state.genre.length > 0 ? _this2.state.genre.concat(response.data.deeta_genre.data) : response.data.deeta_genre.data,
+          url: response.data.next_page
+        });
+
+        _this2.getPagination(response.data.deeta_genre);
+      });
+    }
+  }, {
+    key: "testGenre",
+    value: function testGenre() {
+      axios.get("/masariuman_genre").then(function (response) {
+        return console.log(response.data.deeta_genre);
+      });
+    }
+  }, {
+    key: "getPagination",
+    value: function getPagination(data) {
+      var pagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.setState({
+        pagination: pagination
+      });
+    }
+  }, {
+    key: "loadMore",
+    value: function loadMore() {
+      this.setState({
+        url: this.state.pagination.next_page_url
+      });
+      this.componentDidMount();
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getGenre();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.getGenre();
+    }
+  }, {
+    key: "renderGenre",
+    value: function renderGenre() {
+      return this.state.genre.map(function (genre) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: genre.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+          scope: "row"
+        }, genre.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genre.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Action"));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "category novel");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-card mb-3 card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "card-title"
+      }, "GENRE NOVEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "table-responsive"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "mb-0 table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "GENRE NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderGenre())), this.state.pagination.next_page_url ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success",
+        onClick: this.loadMore
+      }, "More") : ""))));
     }
   }]);
 
@@ -74124,7 +74209,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-notebook"
       }), "Parent Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/category",
+        to: "/nanael_masariuman_hachiel/genre",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 3)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {

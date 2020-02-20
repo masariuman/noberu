@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Genre;
 
 class DeetaController extends Controller
 {
     public function deeta_tag()
     {
-        $pagination = 10;
+        $pagination = 7;
         $tag = Tag::orderBy("id", "DESC")->paginate($pagination);
         $count = $tag->CurrentPage()*$pagination-($pagination-1);
         foreach ($tag as $tags) {
@@ -19,6 +20,21 @@ class DeetaController extends Controller
         // dd($gets);
 		return response()->json([
             'deeta_tag' => $tag
+		]);
+    }
+
+    public function deeta_genre()
+    {
+        $pagination = 7;
+        $genre = Genre::orderBy("id", "DESC")->paginate($pagination);
+        $count = $genre->CurrentPage()*$pagination-($pagination-1);
+        foreach ($genre as $genres) {
+            $genres['nomor'] = $count;
+            $count++;
+        }
+        // dd($gets);
+		return response()->json([
+            'deeta_genre' => $genre
 		]);
     }
     /**

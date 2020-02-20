@@ -14,6 +14,8 @@ Auth::routes();
 
 Route::get('/masariuman_tag', 'DeetaController@deeta_tag');
 
+Route::get('/masariuman_genre', 'DeetaController@deeta_genre');
+
 Route::group(['middleware'=> 'auth'], function () {
     Route::any('{all}', function () {
         return view('hiyaa');
