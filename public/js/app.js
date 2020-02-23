@@ -73282,7 +73282,12 @@ function (_Component) {
         className: "main-card mb-3 card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Link, {
+        to: "/nanael_masariuman_hachiel/genre/new",
+        className: "mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-plus"
+      }), " Add New Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "card-title"
       }, "GENRE NOVEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "table-responsive"

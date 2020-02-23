@@ -78,6 +78,12 @@ class Category extends Component {
             <div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
+                        <Link
+                            to={`/nanael_masariuman_hachiel/genre/new`}
+                            className="mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
+                        >
+                            <a className="pe-7s-plus"></a> Add New Genre
+                        </Link>
                         <h5 className="card-title">GENRE NOVEL</h5>
                         <div className="table-responsive">
                             <table className="mb-0 table">
