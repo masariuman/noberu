@@ -17,6 +17,7 @@ class CreateTableCategory extends Migration
             $table->bigIncrements('id');
             $table->string('category');
             $table->enum('status',[1,0,2])->default(1);
+            $table->string('url');
             $table->timestamps();
         });
     }

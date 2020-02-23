@@ -17,6 +17,7 @@ class CreateTableTag extends Migration
             $table->bigIncrements('id');
             $table->string('tag');
             $table->enum('status',[1,0,2])->default(1);
+            $table->string('url');
             $table->timestamps();
         });
     }

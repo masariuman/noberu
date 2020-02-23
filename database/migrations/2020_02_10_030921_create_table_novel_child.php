@@ -22,6 +22,7 @@ class CreateTableNovelChild extends Migration
             $table->text('thumbnail');
             $table->string('thumbnail_desc');
             $table->enum('status',[1,0,2])->default(1);
+            $table->string('url');
             $table->timestamps();
         });
     }
