@@ -7,16 +7,18 @@ class Tag extends Component {
         this.state = {
             tag: [],
             pagination: [],
-            new: "",
-            url: null
+            create: "",
+            url: "/masariuman_tag"
         };
         this.loadMore = this.loadMore.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderTag = this.renderTag.bind(this);
     }
 
     handleChange(e) {
         this.setState({
-            new: e.target.value
+            create: e.target.value
         });
         // console.log(e.target.value);
     }
@@ -24,15 +26,20 @@ class Tag extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post("/masariuman_tag", {
-                new: this.state.new
+            .post("/masariuman_tag/store", {
+                create: this.state.create
             })
             .then(response => {
                 this.setState({
-                    tag: [response.data, ...this.state.tag],
-                    new: ""
+                    tag: [response.data.deeta_tag, ...this.state.tag],
+                    create: ""
                 });
+                // console.log("from handlesubmit", response);
+            })
+            .catch(error => {
+                console.log(error.message);
             });
+        // console.log(this.state.create);
     }
 
     getTag() {
@@ -46,7 +53,7 @@ class Tag extends Component {
                                   response.data.deeta_tag.data
                               )
                             : response.data.deeta_tag.data,
-                    url: response.data.next_page
+                    url: response.data.deeta_tag.next_page_url
                 });
                 this.getPagination(response.data.deeta_tag);
             });
@@ -84,7 +91,7 @@ class Tag extends Component {
     }
 
     componentDidUpdate() {
-        this.getTag();
+        // this.getTag();
     }
 
     renderTag() {
@@ -128,7 +135,7 @@ class Tag extends Component {
                             <div className="form-group">
                                 <input
                                     onChange={this.handleChange}
-                                    value={this.state.new}
+                                    value={this.state.create}
                                     className="form-control-lg form-control"
                                     placeholder="Add New Tag"
                                     required

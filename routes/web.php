@@ -12,10 +12,11 @@
 */
 Auth::routes();
 
-Route::get('/masariuman_tag', 'DeetaController@deeta_tag');
-Route::post('/masariuman_tag', 'DeetaController@deeta_tag_store');
+// Route::get('/masariuman_tag', 'TagController@index');
+// Route::post('/masariuman_tag', 'TagController@store');
+Route::resource('masariuman_tag','TagController');
 
-Route::get('/masariuman_genre', 'DeetaController@deeta_genre');
+Route::get('/masariuman_genre', 'GenreController@index');
 
 Route::group(['middleware'=> 'auth'], function () {
     Route::any('{all}', function () {

@@ -74365,11 +74365,13 @@ function (_Component) {
     _this.state = {
       tag: [],
       pagination: [],
-      "new": "",
-      url: null
+      create: "",
+      url: "/masariuman_tag"
     };
     _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.renderTag = _this.renderTag.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -74377,7 +74379,7 @@ function (_Component) {
     key: "handleChange",
     value: function handleChange(e) {
       this.setState({
-        "new": e.target.value
+        create: e.target.value
       }); // console.log(e.target.value);
     }
   }, {
@@ -74386,14 +74388,17 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      axios.post("/masariuman_tag", {
-        "new": this.state["new"]
+      axios.post("/masariuman_tag/store", {
+        create: this.state.create
       }).then(function (response) {
         _this2.setState({
-          tag: [response.data].concat(_toConsumableArray(_this2.state.tag)),
-          "new": ""
-        });
-      });
+          tag: [response.data.deeta_tag].concat(_toConsumableArray(_this2.state.tag)),
+          create: ""
+        }); // console.log("from handlesubmit", response);
+
+      })["catch"](function (error) {
+        console.log(error.message);
+      }); // console.log(this.state.create);
     }
   }, {
     key: "getTag",
@@ -74403,7 +74408,7 @@ function (_Component) {
       axios.get(this.state.url === null ? "/masariuman_tag" : this.state.url).then(function (response) {
         _this3.setState({
           tag: _this3.state.tag.length > 0 ? _this3.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
-          url: response.data.next_page
+          url: response.data.deeta_tag.next_page_url
         });
 
         _this3.getPagination(response.data.deeta_tag);
@@ -74444,8 +74449,7 @@ function (_Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.getTag();
+    value: function componentDidUpdate() {// this.getTag();
     }
   }, {
     key: "renderTag",
@@ -74483,7 +74487,7 @@ function (_Component) {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChange,
-        value: this.state["new"],
+        value: this.state.create,
         className: "form-control-lg form-control",
         placeholder: "Add New Tag",
         required: true
