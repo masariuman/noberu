@@ -10,6 +10,8 @@ class Tag extends Model
     protected $fillable = [
     	'tag',
         'status',
-        'url'
+        'url',
+        'created_at',
+        'updated_at'
     ];
 }

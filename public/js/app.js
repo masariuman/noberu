@@ -74324,14 +74324,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -74385,17 +74377,15 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this2 = this;
-
       e.preventDefault();
       axios.post("/masariuman_tag/store", {
         create: this.state.create
       }).then(function (response) {
-        _this2.setState({
-          tag: [response.data.deeta_tag].concat(_toConsumableArray(_this2.state.tag)),
-          create: ""
-        }); // console.log("from handlesubmit", response);
-
+        // this.setState({
+        //     tag: [response.data.deeta_tag, ...this.state.tag],
+        //     create: ""
+        // });
+        console.log("from handlesubmit", response.data);
       })["catch"](function (error) {
         console.log(error.message);
       }); // console.log(this.state.create);
@@ -74403,15 +74393,15 @@ function (_Component) {
   }, {
     key: "getTag",
     value: function getTag() {
-      var _this3 = this;
+      var _this2 = this;
 
       axios.get(this.state.url === null ? "/masariuman_tag" : this.state.url).then(function (response) {
-        _this3.setState({
-          tag: _this3.state.tag.length > 0 ? _this3.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
+        _this2.setState({
+          tag: _this2.state.tag.length > 0 ? _this2.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
           url: response.data.deeta_tag.next_page_url
         });
 
-        _this3.getPagination(response.data.deeta_tag);
+        _this2.getPagination(response.data.deeta_tag);
       });
     }
   }, {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Tag;
 
 class TagController extends Controller
@@ -46,12 +47,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $input['url'] = Hash::make(str_random(30));
+        $input['url'] = Hash::make(Str::random(30));
         $input['tag'] = $request->create;
-        Tag::create($input);
-        return response()->json([
-            'deeta_tag' => $input
+        Tag::create([
+            'tag' => $input['tag'],
+            'url' => $input['url'],
         ]);
+        return response()->json([$request->all()]);
     }
 
     /**
