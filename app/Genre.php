@@ -9,6 +9,7 @@ class Genre extends Model
     protected $table = 'category';
     protected $fillable = [
     	'category',
-    	'status'
+        'status',
+        'url'
     ];
 }

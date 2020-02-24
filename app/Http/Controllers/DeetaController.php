@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Tag;
 use App\Genre;
 
@@ -19,6 +20,21 @@ class DeetaController extends Controller
         }
         // dd($gets);
 		return response()->json([
+            'deeta_tag' => $tag
+		]);
+    }
+
+    public function deeta_tag_store(Request $request)
+    {
+        $input['url'] = Hash::make(str_random(30));
+        $input['tag'] = $request->tag;
+        // $tag = $request->create([
+        //     'tag' => $request->tag,
+        //     'url' => $url
+		// ]);
+        // return response()->json([$'deeta_tag' => $tag]);
+        Tag::create($input);
+        return response()->json([
             'deeta_tag' => $tag
 		]);
     }

@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/masariuman_tag', 'DeetaController@deeta_tag');
+Route::post('/masariuman_tag', 'DeetaController@deeta_tag_store');
 
 Route::get('/masariuman_genre', 'DeetaController@deeta_genre');
 

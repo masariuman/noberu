@@ -9,6 +9,7 @@ class Tag extends Model
     protected $table = 'tag';
     protected $fillable = [
     	'tag',
-    	'status'
+        'status',
+        'url'
     ];
 }

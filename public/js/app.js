@@ -74324,6 +74324,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -74357,24 +74365,48 @@ function (_Component) {
     _this.state = {
       tag: [],
       pagination: [],
+      "new": "",
       url: null
     };
     _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Tag, [{
-    key: "getTag",
-    value: function getTag() {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        "new": e.target.value
+      }); // console.log(e.target.value);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
       var _this2 = this;
 
-      axios.get(this.state.url === null ? "/masariuman_tag" : this.state.url).then(function (response) {
+      e.preventDefault();
+      axios.post("/masariuman_tag", {
+        "new": this.state["new"]
+      }).then(function (response) {
         _this2.setState({
-          tag: _this2.state.tag.length > 0 ? _this2.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
+          tag: [response.data].concat(_toConsumableArray(_this2.state.tag)),
+          "new": ""
+        });
+      });
+    }
+  }, {
+    key: "getTag",
+    value: function getTag() {
+      var _this3 = this;
+
+      axios.get(this.state.url === null ? "/masariuman_tag" : this.state.url).then(function (response) {
+        _this3.setState({
+          tag: _this3.state.tag.length > 0 ? _this3.state.tag.concat(response.data.deeta_tag.data) : response.data.deeta_tag.data,
           url: response.data.next_page
         });
 
-        _this2.getPagination(response.data.deeta_tag);
+        _this3.getPagination(response.data.deeta_tag);
       });
     }
   }, {
@@ -74445,12 +74477,22 @@ function (_Component) {
         className: "main-card mb-3 card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/tag/new",
-        className: "mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChange,
+        value: this.state["new"],
+        className: "form-control-lg form-control",
+        placeholder: "Add New Tag",
+        required: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "btn-square btn-hover-shine btn btn-success"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "pe-7s-plus"
-      }), " Add New Tag"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Add New Tag")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"

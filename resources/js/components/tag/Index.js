@@ -7,9 +7,32 @@ class Tag extends Component {
         this.state = {
             tag: [],
             pagination: [],
+            new: "",
             url: null
         };
         this.loadMore = this.loadMore.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({
+            new: e.target.value
+        });
+        // console.log(e.target.value);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        axios
+            .post("/masariuman_tag", {
+                new: this.state.new
+            })
+            .then(response => {
+                this.setState({
+                    tag: [response.data, ...this.state.tag],
+                    new: ""
+                });
+            });
     }
 
     getTag() {
@@ -95,12 +118,30 @@ class Tag extends Component {
                 </div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
-                        <Link
+                        {/* <Link
                             to={`/nanael_masariuman_hachiel/tag/new`}
                             className="mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
                         >
                             <a className="pe-7s-plus"></a> Add New Tag
-                        </Link>
+                        </Link> */}
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <input
+                                    onChange={this.handleChange}
+                                    value={this.state.new}
+                                    className="form-control-lg form-control"
+                                    placeholder="Add New Tag"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="btn-square btn-hover-shine btn btn-success"
+                            >
+                                <a className="pe-7s-plus"></a> Add New Tag
+                            </button>
+                        </form>
+                        <hr />
                         <p></p>
                         <div className="table-responsive">
                             <table className="mb-0 table">
