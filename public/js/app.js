@@ -73281,6 +73281,18 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-page-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "pe-7s-menu icon-gradient bg-happy-green"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "GENRE NOVEL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-subheading"
+      }, "Halaman ini berfungsi untuk memanajemen genre novel."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-card mb-3 card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
@@ -73289,9 +73301,7 @@ function (_Component) {
         className: "mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "pe-7s-plus"
-      }), " Add New Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "card-title"
-      }, "GENRE NOVEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Add New Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"
@@ -74420,6 +74430,18 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-page-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "pe-7s-pin icon-gradient bg-happy-green"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TAG NOVEL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-subheading"
+      }, "Halaman ini berfungsi untuk memanajemen tag novel."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-card mb-3 card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
@@ -74428,9 +74450,7 @@ function (_Component) {
         className: "mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "pe-7s-plus"
-      }), " Add New Tag"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "card-title"
-      }, "TAG NOVEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Add New Tag"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"

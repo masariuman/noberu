@@ -77,6 +77,22 @@ class Category extends Component {
     render() {
         return (
             <div>
+                <div className="app-page-title">
+                    <div className="page-title-wrapper">
+                        <div className="page-title-heading">
+                            <div className="page-title-icon">
+                                <i className="pe-7s-menu icon-gradient bg-happy-green"></i>
+                            </div>
+                            <div>
+                                GENRE NOVEL
+                                <div className="page-title-subheading">
+                                    Halaman ini berfungsi untuk memanajemen
+                                    genre novel.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
                         <Link
@@ -85,7 +101,7 @@ class Category extends Component {
                         >
                             <a className="pe-7s-plus"></a> Add New Genre
                         </Link>
-                        <h5 className="card-title">GENRE NOVEL</h5>
+                        <p></p>
                         <div className="table-responsive">
                             <table className="mb-0 table">
                                 <thead>

@@ -77,6 +77,22 @@ class Tag extends Component {
     render() {
         return (
             <div>
+                <div className="app-page-title">
+                    <div className="page-title-wrapper">
+                        <div className="page-title-heading">
+                            <div className="page-title-icon">
+                                <i className="pe-7s-pin icon-gradient bg-happy-green"></i>
+                            </div>
+                            <div>
+                                TAG NOVEL
+                                <div className="page-title-subheading">
+                                    Halaman ini berfungsi untuk memanajemen tag
+                                    novel.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
                         <Link
@@ -85,7 +101,7 @@ class Tag extends Component {
                         >
                             <a className="pe-7s-plus"></a> Add New Tag
                         </Link>
-                        <h5 className="card-title">TAG NOVEL</h5>
+                        <p></p>
                         <div className="table-responsive">
                             <table className="mb-0 table">
                                 <thead>
