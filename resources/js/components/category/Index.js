@@ -53,7 +53,7 @@ class Category extends Component {
                                   response.data.deeta_genre.data
                               )
                             : response.data.deeta_genre.data,
-                    url: response.data.next_page
+                    url: response.data.deeta_genre.next_page_url
                 });
                 this.getPagination(response.data.deeta_genre);
             });
@@ -125,12 +125,24 @@ class Category extends Component {
                 </div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
-                        <Link
-                            to={`/nanael_masariuman_hachiel/genre/new`}
-                            className="mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
-                        >
-                            <a className="pe-7s-plus"></a> Add New Genre
-                        </Link>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <input
+                                    onChange={this.handleChange}
+                                    value={this.state.create}
+                                    className="form-control-lg form-control"
+                                    placeholder="Add New Genre"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="btn-square btn-hover-shine btn btn-success"
+                            >
+                                <a className="pe-7s-plus"></a> Add New Genre
+                            </button>
+                        </form>
+                        <hr />
                         <p></p>
                         <div className="table-responsive">
                             <table className="mb-0 table">
