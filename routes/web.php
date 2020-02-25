@@ -18,6 +18,7 @@ Route::get('/masariuman_tag','TagController@index');
 Route::post('/masariuman_tag/store','TagController@store');
 
 Route::get('/masariuman_genre', 'GenreController@index');
+Route::post('/masariuman_genre/store', 'GenreController@store');
 
 Route::group(['middleware'=> 'auth'], function () {
     Route::any('{all}', function () {

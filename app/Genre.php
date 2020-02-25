@@ -10,6 +10,8 @@ class Genre extends Model
     protected $fillable = [
     	'category',
         'status',
-        'url'
+        'url',
+        'created_at',
+        'updated_at'
     ];
 }

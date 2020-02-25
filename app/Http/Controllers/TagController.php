@@ -47,7 +47,7 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $input['url'] = Hash::make(Str::random(30));
+        $input['url'] = Hash::make(Str::random(96));
         $input['tag'] = $request->create;
         Tag::create([
             'tag' => $input['tag'],

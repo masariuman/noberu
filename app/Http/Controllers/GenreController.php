@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Genre;
 
 class GenreController extends Controller
@@ -46,7 +47,17 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input['url'] = Hash::make(Str::random(96));
+        $input['genre'] = $request->create;
+        Genre::create([
+            'category' => $input['genre'],
+            'url' => $input['url'],
+        ]);
+        $genre = Genre::orderBy("id", "DESC")->first();
+        $genre['nomor'] = "NEW";
+        return response()->json([
+            'deeta_genre' => $genre
+		]);
     }
 
     /**
