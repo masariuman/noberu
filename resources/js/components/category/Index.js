@@ -11,6 +11,35 @@ class Category extends Component {
             url: "/masariuman_genre"
         };
         this.loadMore = this.loadMore.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderGenre = this.renderGenre.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({
+            create: e.target.value
+        });
+        // console.log(e.target.value);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        axios
+            .post("/masariuman_genre/store", {
+                create: this.state.create
+            })
+            .then(response => {
+                this.setState({
+                    genre: [response.data.deeta_genre, ...this.state.genre],
+                    create: ""
+                });
+                // console.log("from handle sumit", response);
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+        // console.log(this.state.create);
     }
 
     getGenre() {
@@ -62,7 +91,7 @@ class Category extends Component {
     }
 
     componentDidUpdate() {
-        this.getGenre();
+        // this.getGenre();
     }
 
     renderGenre() {

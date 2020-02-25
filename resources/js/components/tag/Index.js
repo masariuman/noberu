@@ -34,7 +34,7 @@ class Tag extends Component {
                     tag: [response.data.deeta_tag, ...this.state.tag],
                     create: ""
                 });
-                console.log("from handle sumit", response);
+                // console.log("from handle sumit", response);
             })
             .catch(error => {
                 console.log(error.message);
