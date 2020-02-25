@@ -15,6 +15,7 @@ class CreateTableNovelChild extends Migration
     {
         Schema::create('novel_child', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('url');
             $table->unsignedBigInteger('novel_id');
             $table->foreign('novel_id')->references('id')->on('novel');
             $table->string('title');
@@ -22,7 +23,6 @@ class CreateTableNovelChild extends Migration
             $table->text('thumbnail');
             $table->string('thumbnail_desc');
             $table->enum('status',[1,0,2])->default(1);
-            $table->string('url');
             $table->timestamps();
         });
     }

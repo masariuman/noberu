@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use App\Tag;
 
 class TagController extends Controller
@@ -47,11 +45,9 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $input['url'] = Hash::make(Str::random(96));
         $input['tag'] = $request->create;
         Tag::create([
-            'tag' => $input['tag'],
-            'url' => $input['url'],
+            'tag' => $input['tag']
         ]);
         $tag = Tag::orderBy("id", "DESC")->first();
         $tag['nomor'] = "NEW";

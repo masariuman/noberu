@@ -15,9 +15,9 @@ class CreateTableCategory extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('url');
             $table->string('category');
             $table->enum('status',[1,0,2])->default(1);
-            $table->string('url');
             $table->timestamps();
         });
     }
