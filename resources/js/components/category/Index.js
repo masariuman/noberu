@@ -7,7 +7,8 @@ class Category extends Component {
         this.state = {
             genre: [],
             pagination: [],
-            url: null
+            create: "",
+            url: "/masariuman_genre"
         };
         this.loadMore = this.loadMore.bind(this);
     }
