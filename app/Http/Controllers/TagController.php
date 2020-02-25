@@ -53,7 +53,11 @@ class TagController extends Controller
             'tag' => $input['tag'],
             'url' => $input['url'],
         ]);
-        return response()->json([$request->all()]);
+        $tag = Tag::orderBy("id", "DESC")->first();
+        $tag['nomor'] = "NEW";
+        return response()->json([
+            'deeta_tag' => $tag
+		]);
     }
 
     /**

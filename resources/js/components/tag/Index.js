@@ -30,11 +30,11 @@ class Tag extends Component {
                 create: this.state.create
             })
             .then(response => {
-                // this.setState({
-                //     tag: [response.data.deeta_tag, ...this.state.tag],
-                //     create: ""
-                // });
-                console.log("from handlesubmit", response.data);
+                this.setState({
+                    tag: [response.data.deeta_tag, ...this.state.tag],
+                    create: ""
+                });
+                console.log("from handle sumit", response);
             })
             .catch(error => {
                 console.log(error.message);
@@ -88,6 +88,7 @@ class Tag extends Component {
 
     componentDidMount() {
         this.getTag();
+        // console.log(this.state.tag);
     }
 
     componentDidUpdate() {
