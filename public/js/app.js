@@ -74422,16 +74422,31 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TagEdit).call(this, props));
     _this.state = {
       tag: [],
-      pagination: [],
-      url: null
+      content: []
     };
     return _this;
   }
 
   _createClass(TagEdit, [{
+    key: "getTag",
+    value: function getTag() {
+      var _this2 = this;
+
+      axios.get("/masariuman_tag/".concat(this.props.match.params.url, "/edit")).then(function (response) {
+        _this2.setState({
+          tag: [response.data.deeta_tag],
+          content: response.data.deeta_tag.tag
+        });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getTag();
+    }
+  }, {
     key: "render",
     value: function render() {
-      console.log(this.props.match.params.url);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-page-title"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74451,7 +74466,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "Tag",
         type: "text",
-        className: "mb-2 form-control-lg form-control"
+        className: "mb-2 form-control-lg form-control",
+        value: this.state.content
       }))));
     }
   }]);

@@ -26,7 +26,6 @@ class TagEdit extends Component {
     }
 
     render() {
-        console.log(this.props.match.params.url);
         return (
             <div>
                 <div className="app-page-title">
