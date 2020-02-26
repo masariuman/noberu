@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use Uuid;
 
 class TagController extends Controller
 {
@@ -47,7 +48,8 @@ class TagController extends Controller
     {
         $input['tag'] = $request->create;
         Tag::create([
-            'tag' => $input['tag']
+            'tag' => $input['tag'],
+            'url' => Uuid::generate()->string
         ]);
         $tag = Tag::orderBy("id", "DESC")->first();
         $tag['nomor'] = "NEW";
