@@ -100,7 +100,14 @@ class Tag extends Component {
             <tr key={tag.id}>
                 <th scope="row">{tag.nomor}</th>
                 <td>{tag.tag}</td>
-                <td>Action</td>
+                <td>
+                    <Link className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning">
+                        <a className="pe-7s-pen"> </a> Edit
+                    </Link>
+                    <Link className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger">
+                        <a className="pe-7s-trash"> </a> Delete
+                    </Link>
+                </td>
             </tr>
         ));
     }
@@ -155,9 +162,9 @@ class Tag extends Component {
                             <table className="mb-0 table">
                                 <thead>
                                     <tr>
-                                        <th>NO</th>
+                                        <th className="width50px">NO</th>
                                         <th>TAG NAME</th>
-                                        <th>ACTION</th>
+                                        <th className="width250px">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>{this.renderTag()}</tbody>

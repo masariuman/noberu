@@ -2,6 +2,12 @@
 <link href="https://fonts.googleapis.com/css?family=Yatra+One&display=swap" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Amarante' rel='stylesheet' type='text/css'>
 <style>
+    .width50px{
+        width: 50px;
+    }
+    .width250px{
+        width: 250px;
+    }
     .loogoo{
         font-family: 'Yatra One', cursive;
         font-size: 35px;

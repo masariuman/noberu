@@ -74505,7 +74505,15 @@ function (_Component) {
           key: tag.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
-        }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Action"));
+        }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "pe-7s-pen"
+        }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "pe-7s-trash"
+        }, " "), " Delete")));
       });
     }
   }, {
@@ -74546,7 +74554,11 @@ function (_Component) {
         className: "table-responsive"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "mb-0 table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag())), this.state.pagination.next_page_url ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "width50px"
+      }, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "TAG NAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "width250px"
+      }, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderTag())), this.state.pagination.next_page_url ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success",
         onClick: this.loadMore
       }, "More") : ""))));
