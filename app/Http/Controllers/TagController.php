@@ -78,6 +78,10 @@ class TagController extends Controller
     public function edit($id)
     {
         //
+        $tag = Tag::where("url",$id)->first();
+		return response()->json([
+            'deeta_tag' => $tag
+		]);
     }
 
     /**

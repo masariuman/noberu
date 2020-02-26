@@ -1,17 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class TagNew extends Component {
+class TagEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
             tag: [],
-            pagination: [],
-            url: null
+            content: []
         };
     }
 
+    getTag() {
+        axios
+            .get(`/masariuman_tag/${this.props.match.params.url}/edit`)
+            .then(response => {
+                this.setState({
+                    tag: [response.data.deeta_tag],
+                    content: response.data.deeta_tag.tag
+                });
+            });
+    }
+
+    componentDidMount() {
+        this.getTag();
+    }
+
     render() {
+        console.log(this.props.match.params.url);
         return (
             <div>
                 <div className="app-page-title">
@@ -21,9 +36,9 @@ class TagNew extends Component {
                                 <i className="pe-7s-pin icon-gradient bg-happy-green"></i>
                             </div>
                             <div>
-                                TAG NOVEL BARU
+                                EDIT TAG
                                 <div className="page-title-subheading">
-                                    Halaman ini berfungsi untuk menambah tag
+                                    Halaman ini berfungsi untuk mengubah tag
                                     novel.
                                 </div>
                             </div>
@@ -32,7 +47,12 @@ class TagNew extends Component {
                 </div>
                 <div className="main-card mb-3 card">
                     <div className="card-body">
-                    <input placeholder="Tag" type="text" class="mb-2 form-control-lg form-control">
+                        <input
+                            placeholder="Tag"
+                            type="text"
+                            className="mb-2 form-control-lg form-control"
+                            value={this.state.content}
+                        />
                     </div>
                 </div>
             </div>
@@ -40,4 +60,4 @@ class TagNew extends Component {
     }
 }
 
-export default Tag;
+export default TagEdit;
