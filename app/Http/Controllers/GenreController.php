@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Genre;
+use Uuid;
 
 class GenreController extends Controller
 {
@@ -47,7 +48,8 @@ class GenreController extends Controller
     {
         $input['genre'] = $request->create;
         Genre::create([
-            'category' => $input['genre']
+            'category' => $input['genre'],
+            'url' => Uuid::generate()->string
         ]);
         $genre = Genre::orderBy("id", "DESC")->first();
         $genre['nomor'] = "NEW";
