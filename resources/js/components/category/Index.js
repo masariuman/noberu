@@ -100,11 +100,17 @@ class Category extends Component {
                 <th scope="row">{genre.nomor}</th>
                 <td>{genre.category}</td>
                 <td>
-                    <Link className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning">
-                        <a className="pe-7s-pen"> </a> Edit
+                    <Link
+                        to={`/nanael_masariuman_hachiel/genre/${genre.url}/edit`}
+                        className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
+                    >
+                        <span className="pe-7s-pen"> </span> Edit
                     </Link>
-                    <Link className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger">
-                        <a className="pe-7s-trash"> </a> Delete
+                    <Link
+                        to={`/nanael_masariuman_hachiel/genre/${genre.url}/delete`}
+                        className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
+                    >
+                        <span className="pe-7s-trash"> </span> Delete
                     </Link>
                 </td>
             </tr>

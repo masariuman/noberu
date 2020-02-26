@@ -73311,12 +73311,14 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
         }, genre.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genre.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/nanael_masariuman_hachiel/genre/".concat(genre.url, "/edit"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-pen"
         }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/nanael_masariuman_hachiel/genre/".concat(genre.url, "/delete"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-trash"
         }, " "), " Delete")));
       });
@@ -74518,12 +74520,14 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
         }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/nanael_masariuman_hachiel/tag/".concat(tag.url, "/edit"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-pen"
         }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/nanael_masariuman_hachiel/tag/".concat(tag.url, "/delete"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-trash"
         }, " "), " Delete")));
       });
