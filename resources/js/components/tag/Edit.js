@@ -25,10 +25,10 @@ class TagEdit extends Component {
         e.preventDefault();
         axios
             .put(`/masariuman_tag/${this.props.match.params.url}`, {
-                create: this.state.create
+                content: this.state.content
             })
             .then(response => {
-                this, props.history.push("/nanael_masariuman_hachiel/tag");
+                this.props.history.push("/admin/tag");
                 // console.log("from handle sumit", response);
             })
             .catch(error => {
@@ -73,7 +73,7 @@ class TagEdit extends Component {
                     type="submit"
                     className="btn-square btn-hover-shine btn btn-success"
                 >
-                    <a className="pe-7s-plus"></a> Ubah Tag
+                    <a className="pe-7s-plus"></a> Ubah Tag / Klik Enter
                 </button>
             </form>
         ));

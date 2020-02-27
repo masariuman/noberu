@@ -74445,9 +74445,10 @@ function (_Component) {
 
       e.preventDefault();
       axios.put("/masariuman_tag/".concat(this.props.match.params.url), {
-        create: this.state.create
+        content: this.state.content
       }).then(function (response) {
-        _this2, props.history.push("/nanael_masariuman_hachiel/tag"); // console.log("from handle sumit", response);
+        _this2.props.history.push("/admin/tag"); // console.log("from handle sumit", response);
+
       })["catch"](function (error) {
         console.log(error.message);
       }); // console.log(this.state.create);
@@ -74495,7 +74496,7 @@ function (_Component) {
           className: "btn-square btn-hover-shine btn btn-success"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "pe-7s-plus"
-        }), " Ubah Tag"));
+        }), " Ubah Tag / Klik Enter"));
       });
     }
   }, {

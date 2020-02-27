@@ -95,8 +95,8 @@ class TagController extends Controller
     {
         //
         $tag = Tag::where("url",$id)->first();
-        $task->update([
-            'tag' => $request->create
+        $tag->update([
+            'tag' => $request->content
         ]);
         return response()->json([
             'deeta_tag' => $tag
