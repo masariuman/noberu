@@ -72999,27 +72999,27 @@ if (document.getElementById("root")) {
     className: "app-main__inner"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel",
+    path: "/admin",
     component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/child",
+    path: "/admin/child",
     component: _components_child_Index__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/parent",
+    path: "/admin/parent",
     component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/genre",
+    path: "/admin/genre",
     component: _components_category_Index__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/tag",
+    path: "/admin/tag",
     component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/nanael_masariuman_hachiel/tag/:url/edit",
+    path: "/admin/tag/:url/edit",
     component: _components_tag_Edit__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_13__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
 }
@@ -73317,12 +73317,12 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
         }, genre.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genre.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/nanael_masariuman_hachiel/genre/".concat(genre.url, "/edit"),
+          to: "/admin/genre/".concat(genre.url, "/edit"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-pen"
         }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/nanael_masariuman_hachiel/genre/".concat(genre.url, "/delete"),
+          to: "/admin/genre/".concat(genre.url, "/delete"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-trash"
@@ -74274,31 +74274,31 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "app-sidebar__heading"
       }, "Dashboards"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel",
+        to: "/admin",
         className: "info {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 0)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-info"
       }), "Dashboard")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/child",
+        to: "/admin/child",
         className: "addva {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 1)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-bookmarks"
       }), "Child Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/parent",
+        to: "/admin/parent",
         className: "history {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 2)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-notebook"
       }), "Parent Novel")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/genre",
+        to: "/admin/genre",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 3)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "metismenu-icon pe-7s-menu"
       }), "Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/nanael_masariuman_hachiel/tag",
+        to: "/admin/tag",
         className: "gantipass {this.state.activeIndex==0 ? 'mm-active': null}",
         onClick: this.toggleClass.bind(this, 4)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -74444,15 +74444,10 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      axios.post("/masariuman_tag/update", {
-        create: this.state.create,
-        url: this.state.url
+      axios.put("/masariuman_tag/".concat(this.props.match.params.url), {
+        create: this.state.create
       }).then(function (response) {
-        _this2.setState({
-          tag: [_this2.state.tag],
-          url: ""
-        }); // console.log("from handle sumit", response);
-
+        _this2, props.history.push("/nanael_masariuman_hachiel/tag"); // console.log("from handle sumit", response);
       })["catch"](function (error) {
         console.log(error.message);
       }); // console.log(this.state.create);
@@ -74611,7 +74606,7 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      axios.post("/masariuman_tag/store", {
+      axios.post("/masariuman_tag", {
         create: this.state.create
       }).then(function (response) {
         _this2.setState({
@@ -74683,12 +74678,12 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
         }, tag.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tag.tag), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/nanael_masariuman_hachiel/tag/".concat(tag.url, "/edit"),
+          to: "/admin/tag/".concat(tag.url, "/edit"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-pen"
         }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/nanael_masariuman_hachiel/tag/".concat(tag.url, "/delete"),
+          to: "/admin/tag/".concat(tag.url, "/delete"),
           className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "pe-7s-trash"

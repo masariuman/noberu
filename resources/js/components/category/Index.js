@@ -101,13 +101,13 @@ class Category extends Component {
                 <td>{genre.category}</td>
                 <td>
                     <Link
-                        to={`/nanael_masariuman_hachiel/genre/${genre.url}/edit`}
+                        to={`/admin/genre/${genre.url}/edit`}
                         className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
                     >
                         <span className="pe-7s-pen"> </span> Edit
                     </Link>
                     <Link
-                        to={`/nanael_masariuman_hachiel/genre/${genre.url}/delete`}
+                        to={`/admin/genre/${genre.url}/delete`}
                         className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
                     >
                         <span className="pe-7s-trash"> </span> Delete

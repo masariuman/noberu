@@ -26,7 +26,7 @@ class Tag extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post("/masariuman_tag/store", {
+            .post("/masariuman_tag", {
                 create: this.state.create
             })
             .then(response => {
@@ -102,13 +102,13 @@ class Tag extends Component {
                 <td>{tag.tag}</td>
                 <td>
                     <Link
-                        to={`/nanael_masariuman_hachiel/tag/${tag.url}/edit`}
+                        to={`/admin/tag/${tag.url}/edit`}
                         className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
                     >
                         <span className="pe-7s-pen"> </span> Edit
                     </Link>
                     <Link
-                        to={`/nanael_masariuman_hachiel/tag/${tag.url}/delete`}
+                        to={`/admin/tag/${tag.url}/delete`}
                         className="mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
                     >
                         <span className="pe-7s-trash"> </span> Delete
@@ -140,7 +140,7 @@ class Tag extends Component {
                 <div className="main-card mb-3 card">
                     <div className="card-body">
                         {/* <Link
-                            to={`/nanael_masariuman_hachiel/tag/new`}
+                            to={`/admin/tag/new`}
                             className="mb-2 mr-2 btn-square btn-hover-shine btn btn-success"
                         >
                             <a className="pe-7s-plus"></a> Add New Tag

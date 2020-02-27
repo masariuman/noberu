@@ -25,32 +25,32 @@ if (document.getElementById("root")) {
                         <Switch>
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel"
+                                path="/admin"
                                 component={DashboardIndex}
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/child"
+                                path="/admin/child"
                                 component={ChildIndex}
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/parent"
+                                path="/admin/parent"
                                 component={ParentIndex}
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/genre"
+                                path="/admin/genre"
                                 component={CategoryIndex}
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/tag"
+                                path="/admin/tag"
                                 component={TagIndex}
                             />
                             <Route
                                 exact
-                                path="/nanael_masariuman_hachiel/tag/:url/edit"
+                                path="/admin/tag/:url/edit"
                                 component={TagEdit}
                             />
                             <Empatkosongempat />

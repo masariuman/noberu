@@ -64,7 +64,7 @@ class Sidebar extends Component {
                             <li className="app-sidebar__heading">Dashboards</li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel`}
+                                    to={`/admin`}
                                     className="info {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 0)}
                                 >
@@ -74,7 +74,7 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel/child`}
+                                    to={`/admin/child`}
                                     className="addva {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 1)}
                                 >
@@ -84,7 +84,7 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel/parent`}
+                                    to={`/admin/parent`}
                                     className="history {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 2)}
                                 >
@@ -94,7 +94,7 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel/genre`}
+                                    to={`/admin/genre`}
                                     className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 3)}
                                 >
@@ -104,7 +104,7 @@ class Sidebar extends Component {
                             </li>
                             <li>
                                 <Link
-                                    to={`/nanael_masariuman_hachiel/tag`}
+                                    to={`/admin/tag`}
                                     className="gantipass {this.state.activeIndex==0 ? 'mm-active': null}"
                                     onClick={this.toggleClass.bind(this, 4)}
                                 >

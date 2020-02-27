@@ -24,15 +24,11 @@ class TagEdit extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post("/masariuman_tag/update", {
-                create: this.state.create,
-                url: this.state.url
+            .put(`/masariuman_tag/${this.props.match.params.url}`, {
+                create: this.state.create
             })
             .then(response => {
-                this.setState({
-                    tag: [this.state.tag],
-                    url: ""
-                });
+                this, props.history.push("/nanael_masariuman_hachiel/tag");
                 // console.log("from handle sumit", response);
             })
             .catch(error => {
