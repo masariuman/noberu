@@ -6,8 +6,39 @@ class TagEdit extends Component {
         super(props);
         this.state = {
             tag: [],
-            content: []
+            content: "",
+            url: ""
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderTag = this.renderTag.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({
+            content: e.target.value
+        });
+        // console.log(e.target.value);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        axios
+            .post("/masariuman_tag/update", {
+                create: this.state.create,
+                url: this.state.url
+            })
+            .then(response => {
+                this.setState({
+                    tag: [this.state.tag],
+                    url: ""
+                });
+                // console.log("from handle sumit", response);
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
+        // console.log(this.state.create);
     }
 
     getTag() {
@@ -23,6 +54,33 @@ class TagEdit extends Component {
 
     componentDidMount() {
         this.getTag();
+    }
+
+    renderTag() {
+        return this.state.tag.map(tag => (
+            <form onSubmit={this.handleSubmit} key={tag.id}>
+                <div className="form-group">
+                    <input
+                        onChange={this.handleChange}
+                        placeholder="Tag"
+                        type="text"
+                        className="mb-2 form-control-lg form-control"
+                        value={this.state.content}
+                    />
+                    <input
+                        type="hidden"
+                        className="mb-2 form-control-lg form-control"
+                        value={tag.url}
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="btn-square btn-hover-shine btn btn-success"
+                >
+                    <a className="pe-7s-plus"></a> Ubah Tag
+                </button>
+            </form>
+        ));
     }
 
     render() {
@@ -45,14 +103,7 @@ class TagEdit extends Component {
                     </div>
                 </div>
                 <div className="main-card mb-3 card">
-                    <div className="card-body">
-                        <input
-                            placeholder="Tag"
-                            type="text"
-                            className="mb-2 form-control-lg form-control"
-                            value={this.state.content}
-                        />
-                    </div>
+                    <div className="card-body">{this.renderTag()}</div>
                 </div>
             </div>
         );

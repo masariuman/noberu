@@ -74398,9 +74398,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -74422,18 +74422,48 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TagEdit).call(this, props));
     _this.state = {
       tag: [],
-      content: []
+      content: "",
+      url: ""
     };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.renderTag = _this.renderTag.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(TagEdit, [{
-    key: "getTag",
-    value: function getTag() {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        content: e.target.value
+      }); // console.log(e.target.value);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
       var _this2 = this;
 
-      axios.get("/masariuman_tag/".concat(this.props.match.params.url, "/edit")).then(function (response) {
+      e.preventDefault();
+      axios.post("/masariuman_tag/update", {
+        create: this.state.create,
+        url: this.state.url
+      }).then(function (response) {
         _this2.setState({
+          tag: [_this2.state.tag],
+          url: ""
+        }); // console.log("from handle sumit", response);
+
+      })["catch"](function (error) {
+        console.log(error.message);
+      }); // console.log(this.state.create);
+    }
+  }, {
+    key: "getTag",
+    value: function getTag() {
+      var _this3 = this;
+
+      axios.get("/masariuman_tag/".concat(this.props.match.params.url, "/edit")).then(function (response) {
+        _this3.setState({
           tag: [response.data.deeta_tag],
           content: response.data.deeta_tag.tag
         });
@@ -74443,6 +74473,35 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getTag();
+    }
+  }, {
+    key: "renderTag",
+    value: function renderTag() {
+      var _this4 = this;
+
+      return this.state.tag.map(function (tag) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          onSubmit: _this4.handleSubmit,
+          key: tag.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-group"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          onChange: _this4.handleChange,
+          placeholder: "Tag",
+          type: "text",
+          className: "mb-2 form-control-lg form-control",
+          value: _this4.state.content
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "hidden",
+          className: "mb-2 form-control-lg form-control",
+          value: tag.url
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "submit",
+          className: "btn-square btn-hover-shine btn btn-success"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "pe-7s-plus"
+        }), " Ubah Tag"));
+      });
     }
   }, {
     key: "render",
@@ -74463,12 +74522,7 @@ function (_Component) {
         className: "main-card mb-3 card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        placeholder: "Tag",
-        type: "text",
-        className: "mb-2 form-control-lg form-control",
-        value: this.state.content
-      }))));
+      }, this.renderTag())));
     }
   }]);
 
