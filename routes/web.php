@@ -12,14 +12,6 @@
 */
 Auth::routes();
 
-// Route::get('/masariuman_tag', 'TagController@index');
-// Route::post('/masariuman_tag', 'TagController@store');
-
-// Route::get('/masariuman_tag','TagController@index');
-// Route::post('/masariuman_tag/store','TagController@store');
-// Route::get('/masariuman_tag/{id}/edit', 'TagController@edit');
-// Route::put('/masariuman_tag/{id}', 'TagController@update');
-
 Route::resource('masariuman_tag', 'TagController');
 
 Route::get('/masariuman_genre', 'GenreController@index');

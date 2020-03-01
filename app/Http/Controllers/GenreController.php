@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Genre;
 use Uuid;
+use Illuminate\Support\Facades\Hash;
 
 class GenreController extends Controller
 {
@@ -49,7 +50,7 @@ class GenreController extends Controller
         $input['genre'] = $request->create;
         Genre::create([
             'category' => $input['genre'],
-            'url' => Uuid::generate()->string
+            'url' => Hash::make(Hash::make(Uuid::generate()->string))
         ]);
         $genre = Genre::orderBy("id", "DESC")->first();
         $genre['nomor'] = "NEW";
