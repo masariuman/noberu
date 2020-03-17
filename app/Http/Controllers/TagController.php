@@ -50,7 +50,7 @@ class TagController extends Controller
         $input['tag'] = $request->create;
         Tag::create([
             'tag' => $input['tag'],
-            'url' => Hash::make(Hash::make(Uuid::generate()->string))
+            'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
         $tag = Tag::orderBy("id", "DESC")->first();
         $tag['nomor'] = "NEW";

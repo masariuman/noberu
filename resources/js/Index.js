@@ -8,7 +8,9 @@ import Footer from "./components/hbxcphyevn/Footer";
 import DashboardIndex from "./components/dashboard/Index";
 import ChildIndex from "./components/child/Index";
 import ParentIndex from "./components/parent/Index";
+import ParentNew from "./components/parent/New";
 import CategoryIndex from "./components/category/Index";
+import CategoryEdit from "./components/category/Edit";
 import TagIndex from "./components/tag/Index";
 import TagEdit from "./components/tag/Edit";
 import Empatkosongempat from "./components/Empatkosongempat";
@@ -40,8 +42,18 @@ if (document.getElementById("root")) {
                             />
                             <Route
                                 exact
+                                path="/admin/parent/new"
+                                component={ParentNew}
+                            />
+                            <Route
+                                exact
                                 path="/admin/genre"
                                 component={CategoryIndex}
+                            />
+                            <Route
+                                exact
+                                path="/admin/genre/:url/edit"
+                                component={CategoryEdit}
                             />
                             <Route
                                 exact

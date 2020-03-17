@@ -50,7 +50,7 @@ class GenreController extends Controller
         $input['genre'] = $request->create;
         Genre::create([
             'category' => $input['genre'],
-            'url' => Hash::make(Hash::make(Uuid::generate()->string))
+            'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
         $genre = Genre::orderBy("id", "DESC")->first();
         $genre['nomor'] = "NEW";
@@ -78,7 +78,10 @@ class GenreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $genre = Genre::where("url",$id)->first();
+		return response()->json([
+            'deeta_genre' => $genre
+		]);
     }
 
     /**
@@ -91,6 +94,13 @@ class GenreController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $genre = Genre::where("url",$id)->first();
+        $genre->update([
+            'category' => $request->content
+        ]);
+        return response()->json([
+            'deeta_genre' => $genre
+		]);
     }
 
     /**

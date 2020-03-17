@@ -26,7 +26,7 @@ class Category extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post("/masariuman_genre/store", {
+            .post("/masariuman_genre", {
                 create: this.state.create
             })
             .then(response => {

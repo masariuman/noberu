@@ -12,21 +12,25 @@
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.19.2",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^3.4.1",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
+        "react": "^16.13.0",
         "react-dom": "^16.2.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^17.0.0",
+        "@ckeditor/ckeditor5-build-decoupled-document": "^17.0.0",
+        "@ckeditor/ckeditor5-react": "^2.1.0",
         "jshint": "^2.11.0",
         "react-router-dom": "^5.1.2",
+        "react-summernote": "^2.0.0",
         "xcode": "^2.1.0"
     }
 }
