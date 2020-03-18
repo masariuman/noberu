@@ -91170,11 +91170,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_child_Index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/child/Index */ "./resources/js/components/child/Index.js");
 /* harmony import */ var _components_parent_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/parent/Index */ "./resources/js/components/parent/Index.js");
 /* harmony import */ var _components_parent_New__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/parent/New */ "./resources/js/components/parent/New.js");
-/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
-/* harmony import */ var _components_category_Edit__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/category/Edit */ "./resources/js/components/category/Edit.js");
-/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
-/* harmony import */ var _components_tag_Edit__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/tag/Edit */ "./resources/js/components/tag/Edit.js");
-/* harmony import */ var _components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/Empatkosongempat */ "./resources/js/components/Empatkosongempat.js");
+/* harmony import */ var _components_parent_Edit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/parent/Edit */ "./resources/js/components/parent/Edit.js");
+/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
+/* harmony import */ var _components_category_Edit__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/category/Edit */ "./resources/js/components/category/Edit.js");
+/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
+/* harmony import */ var _components_tag_Edit__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/tag/Edit */ "./resources/js/components/tag/Edit.js");
+/* harmony import */ var _components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/Empatkosongempat */ "./resources/js/components/Empatkosongempat.js");
+
 
 
 
@@ -91217,21 +91219,25 @@ if (document.getElementById("root")) {
     component: _components_parent_New__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
+    path: "/admin/parent/:url/edit",
+    component: _components_parent_Edit__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
     path: "/admin/genre",
-    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/genre/:url/edit",
-    component: _components_category_Edit__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _components_category_Edit__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/tag",
-    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_13__["default"]
+    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_14__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/tag/:url/edit",
-    component: _components_tag_Edit__WEBPACK_IMPORTED_MODULE_14__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_15__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
+    component: _components_tag_Edit__WEBPACK_IMPORTED_MODULE_15__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_16__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
 }
 
 /***/ }),
@@ -92680,6 +92686,352 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./resources/js/components/parent/Edit.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/parent/Edit.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_summernote__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-summernote */ "./node_modules/react-summernote/dist/react-summernote.js");
+/* harmony import */ var react_summernote__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_summernote__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-summernote/dist/react-summernote.css */ "./node_modules/react-summernote/dist/react-summernote.css");
+/* harmony import */ var react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+ // import styles
+
+var ParentEdit =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ParentEdit, _Component);
+
+  function ParentEdit(props) {
+    var _this;
+
+    _classCallCheck(this, ParentEdit);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ParentEdit).call(this, props));
+    _this.state = {
+      title: "",
+      content: "",
+      genres: [],
+      tags: [],
+      thumb: "",
+      thumbDesc: ""
+    };
+    _this.onImageUpload = _this.onImageUpload.bind(_assertThisInitialized(_this));
+    _this.removeTag = _this.removeTag.bind(_assertThisInitialized(_this));
+    _this.inputKeyDown = _this.inputKeyDown.bind(_assertThisInitialized(_this));
+    _this.removeGenre = _this.removeGenre.bind(_assertThisInitialized(_this));
+    _this.inputKeyDownGenre = _this.inputKeyDownGenre.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChangeTitle = _this.handleChangeTitle.bind(_assertThisInitialized(_this));
+    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
+    _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
+    _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ParentEdit, [{
+    key: "handleChangeTitle",
+    value: function handleChangeTitle(e) {
+      this.setState({
+        title: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangeContent",
+    value: function handleChangeContent(e) {
+      this.setState({
+        content: e
+      });
+    }
+  }, {
+    key: "handleChangethumb",
+    value: function handleChangethumb(e) {
+      this.setState({
+        thumb: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangethumbDesc",
+    value: function handleChangethumbDesc(e) {
+      this.setState({
+        thumbDesc: e.target.value
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      axios.post("/parent", {
+        title: this.state.title,
+        content: this.state.content,
+        genres: this.state.genres,
+        tags: this.state.tags,
+        thumb: this.state.thumb,
+        thumbDesc: this.state.thumbDesc
+      }).then(function (response) {
+        _this2.props.history.push("/admin/parent");
+      })["catch"](function (error) {
+        console.log(error.message);
+      });
+      console.log(this.state);
+    }
+  }, {
+    key: "removeGenre",
+    value: function removeGenre(i) {
+      var newGenres = _toConsumableArray(this.state.genres);
+
+      newGenres.splice(i, 1);
+      this.setState({
+        genres: newGenres
+      });
+    }
+  }, {
+    key: "inputKeyDownGenre",
+    value: function inputKeyDownGenre(e) {
+      var val = e.target.value;
+
+      if (e.key === "Enter" && val) {
+        if (this.state.genres.find(function (genre) {
+          return genre.toLowerCase() === val.toLowerCase();
+        })) {
+          return;
+        }
+
+        this.setState({
+          genres: [].concat(_toConsumableArray(this.state.genres), [val])
+        });
+        this.genreInput.value = null;
+      } else if (e.key === "Backspace" && !val) {
+        this.removeGenre(this.state.genres.length - 1);
+      }
+    }
+  }, {
+    key: "removeTag",
+    value: function removeTag(i) {
+      var newTags = _toConsumableArray(this.state.tags);
+
+      newTags.splice(i, 1);
+      this.setState({
+        tags: newTags
+      });
+    }
+  }, {
+    key: "inputKeyDown",
+    value: function inputKeyDown(e) {
+      var val = e.target.value;
+
+      if (e.key === "Enter" && val) {
+        if (this.state.tags.find(function (tag) {
+          return tag.toLowerCase() === val.toLowerCase();
+        })) {
+          return;
+        }
+
+        this.setState({
+          tags: [].concat(_toConsumableArray(this.state.tags), [val])
+        });
+        this.tagInput.value = null;
+      } else if (e.key === "Backspace" && !val) {
+        this.removeTag(this.state.tags.length - 1);
+      }
+    }
+  }, {
+    key: "onImageUpload",
+    value: function onImageUpload(images, insertImage) {
+      console.log("onImageUpload", images);
+      /* FileList does not support ordinary array methods */
+
+      var _loop = function _loop(i) {
+        /* Stores as bas64enc string in the text.
+         * Should potentially be stored separately and include just the url
+         */
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+          insertImage(reader.result);
+        };
+
+        reader.readAsDataURL(images[i]);
+      };
+
+      for (var i = 0; i < images.length; i++) {
+        _loop(i);
+      }
+    }
+  }, {
+    key: "getNovel",
+    value: function getNovel() {
+      var _this3 = this;
+
+      axios.get("/parent/".concat(this.props.match.params.url, "/edit")).then(function (response) {
+        _this3.setState({
+          title: response.data.data.title,
+          content: response.data.data.content,
+          genres: [],
+          tags: [],
+          thumb: response.data.data.thumbnail,
+          thumbDesc: response.data.data.thumbnail_desc
+        });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getNovel();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-page-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "pe-7s-notebook icon-gradient bg-happy-green"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "NEW PARENT NOVEL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-subheading"
+      }, "Halaman ini berfungsi untuk membuat parent novel / TOC / Description Novel baru."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-card mb-3 card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChangeTitle,
+        value: this.state.title,
+        placeholder: "Title",
+        type: "text",
+        className: "mb-2 form-control-lg form-control"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_summernote__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.content,
+        options: {
+          lang: "ru-RU",
+          height: 350,
+          dialogsInBody: true,
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+        },
+        onChange: this.handleChangeContent,
+        onImageUpload: this.onImageUpload
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-tag"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "input-tag__tags"
+      }, this.state.tags.map(function (tag, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: tag
+        }, tag, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          onClick: function onClick() {
+            _this4.removeTag(i);
+          }
+        }, "+"));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "input-tag__tags__input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Tags",
+        onKeyDown: this.inputKeyDown,
+        ref: function ref(c) {
+          _this4.tagInput = c;
+        }
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-tag"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "input-tag__tags"
+      }, this.state.genres.map(function (genre, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: genre
+        }, genre, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          onClick: function onClick() {
+            _this4.removeGenre(i);
+          }
+        }, "+"));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "input-tag__tags__input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Genres",
+        onKeyDown: this.inputKeyDownGenre,
+        ref: function ref(c) {
+          _this4.genreInput = c;
+        }
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "thumb"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChangethumb,
+        type: "file",
+        placeholder: "Thumbnail",
+        className: "thumbinput"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChangethumbDesc,
+        type: "text",
+        value: this.state.thumbDesc,
+        placeholder: "Thumbnail Description",
+        className: "form-control-lg form-control desc"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.handleSubmit,
+        className: "btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-plus"
+      }), " Novel Baru", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-plus"
+      }))))));
+    }
+  }]);
+
+  return ParentEdit;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ParentEdit);
 
 /***/ }),
 
