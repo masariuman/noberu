@@ -30,3 +30,7 @@ Route::group(['middleware'=> 'auth'], function () {
 // Route::get('/nanael_masariuman_hachiel', 'NanaelMasariumanHachielController@dashboard');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

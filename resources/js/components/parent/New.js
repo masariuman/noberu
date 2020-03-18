@@ -7,12 +7,112 @@ class ParentNew extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            genre: [],
-            pagination: [],
-            create: "",
-            url: "/masariuman_genre"
+            title: "",
+            content: "",
+            genres: [],
+            tags: [],
+            thumb: "",
+            thumbDesc: ""
         };
         this.onImageUpload = this.onImageUpload.bind(this);
+        this.removeTag = this.removeTag.bind(this);
+        this.inputKeyDown = this.inputKeyDown.bind(this);
+        this.removeGenre = this.removeGenre.bind(this);
+        this.inputKeyDownGenre = this.inputKeyDownGenre.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleChangeContent = this.handleChangeContent.bind(this);
+        this.handleChangethumb = this.handleChangethumb.bind(this);
+        this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+    }
+
+    handleChangeTitle(e) {
+        this.setState({
+            title: e.target.value
+        });
+    }
+
+    handleChangeContent(e) {
+        this.setState({
+            content: e
+        });
+    }
+
+    handleChangethumb(e) {
+        this.setState({
+            thumb: e.target.value
+        });
+    }
+
+    handleChangethumbDesc(e) {
+        this.setState({
+            thumbDesc: e.target.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        // axios
+        //     .post("/masariuman_genre", {
+        //         create: this.state.create
+        //     })
+        //     .then(response => {
+        //         this.setState({
+        //             genre: [response.data.deeta_genre, ...this.state.genre],
+        //             create: ""
+        //         });
+        //         // console.log("from handle sumit", response);
+        //     })
+        //     .catch(error => {
+        //         console.log(error.message);
+        //     });
+        console.log(this.state);
+    }
+
+    removeGenre(i) {
+        const newGenres = [...this.state.genres];
+        newGenres.splice(i, 1);
+        this.setState({ genres: newGenres });
+    }
+
+    inputKeyDownGenre(e) {
+        const val = e.target.value;
+        if (e.key === "Enter" && val) {
+            if (
+                this.state.genres.find(
+                    genre => genre.toLowerCase() === val.toLowerCase()
+                )
+            ) {
+                return;
+            }
+            this.setState({ genres: [...this.state.genres, val] });
+            this.genreInput.value = null;
+        } else if (e.key === "Backspace" && !val) {
+            this.removeGenre(this.state.genres.length - 1);
+        }
+    }
+
+    removeTag(i) {
+        const newTags = [...this.state.tags];
+        newTags.splice(i, 1);
+        this.setState({ tags: newTags });
+    }
+
+    inputKeyDown(e) {
+        const val = e.target.value;
+        if (e.key === "Enter" && val) {
+            if (
+                this.state.tags.find(
+                    tag => tag.toLowerCase() === val.toLowerCase()
+                )
+            ) {
+                return;
+            }
+            this.setState({ tags: [...this.state.tags, val] });
+            this.tagInput.value = null;
+        } else if (e.key === "Backspace" && !val) {
+            this.removeTag(this.state.tags.length - 1);
+        }
     }
 
     onImageUpload(images, insertImage) {
@@ -56,6 +156,8 @@ class ParentNew extends Component {
                         <form>
                             <div className="form-group">
                                 <input
+                                    onChange={this.handleChangeTitle}
+                                    value={this.state.title}
                                     placeholder="Title"
                                     type="text"
                                     className="mb-2 form-control-lg form-control"
@@ -69,21 +171,128 @@ class ParentNew extends Component {
                                             ["style", ["style"]],
                                             [
                                                 "font",
-                                                ["bold", "underline", "clear"]
+                                                [
+                                                    "bold",
+                                                    "underline",
+                                                    "clear",
+                                                    "strikethrough",
+                                                    "superscript",
+                                                    "subscript",
+                                                    "clear"
+                                                ]
                                             ],
-                                            ["fontname", ["fontname"]],
-                                            ["para", ["ul", "ol", "paragraph"]],
+                                            [
+                                                "fontname",
+                                                [
+                                                    "fontname",
+                                                    "fontsize",
+                                                    "color"
+                                                ]
+                                            ],
+                                            [
+                                                "para",
+                                                [
+                                                    "ul",
+                                                    "ol",
+                                                    "paragraph",
+                                                    "height"
+                                                ]
+                                            ],
                                             ["table", ["table"]],
                                             [
                                                 "insert",
-                                                ["link", "picture", "video"]
+                                                [
+                                                    "link",
+                                                    "picture",
+                                                    "video",
+                                                    "hr"
+                                                ]
                                             ],
                                             ["view", ["fullscreen", "codeview"]]
                                         ]
                                     }}
+                                    onChange={this.handleChangeContent}
                                     onImageUpload={this.onImageUpload}
                                 />
+                                <div className="input-tag">
+                                    <ul className="input-tag__tags">
+                                        {this.state.tags.map((tag, i) => (
+                                            <li key={tag}>
+                                                {tag}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        this.removeTag(i);
+                                                    }}
+                                                >
+                                                    +
+                                                </button>
+                                            </li>
+                                        ))}
+                                        <li className="input-tag__tags__input">
+                                            <input
+                                                type="text"
+                                                placeholder="Tags"
+                                                onKeyDown={this.inputKeyDown}
+                                                ref={c => {
+                                                    this.tagInput = c;
+                                                }}
+                                            />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="input-tag">
+                                    <ul className="input-tag__tags">
+                                        {this.state.genres.map((genre, i) => (
+                                            <li key={genre}>
+                                                {genre}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        this.removeGenre(i);
+                                                    }}
+                                                >
+                                                    +
+                                                </button>
+                                            </li>
+                                        ))}
+                                        <li className="input-tag__tags__input">
+                                            <input
+                                                type="text"
+                                                placeholder="Genres"
+                                                onKeyDown={
+                                                    this.inputKeyDownGenre
+                                                }
+                                                ref={c => {
+                                                    this.genreInput = c;
+                                                }}
+                                            />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="thumb">
+                                    <input
+                                        onChange={this.handleChangethumb}
+                                        type="file"
+                                        placeholder="Thumbnail"
+                                        className="thumbinput"
+                                    />
+                                    <input
+                                        onChange={this.handleChangethumbDesc}
+                                        type="text"
+                                        placeholder="Thumbnail Description"
+                                        className="form-control-lg form-control desc"
+                                    />
+                                </div>
                             </div>
+                            <button
+                                type="button"
+                                onClick={this.handleSubmit}
+                                className="btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+                            >
+                                <a className="pe-7s-plus"></a> Novel Baru{" "}
+                                <a className="pe-7s-plus"></a>
+                            </button>
                         </form>
                     </div>
                 </div>
