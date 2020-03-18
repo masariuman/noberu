@@ -52,20 +52,21 @@ class ParentNew extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // axios
-        //     .post("/masariuman_genre", {
-        //         create: this.state.create
-        //     })
-        //     .then(response => {
-        //         this.setState({
-        //             genre: [response.data.deeta_genre, ...this.state.genre],
-        //             create: ""
-        //         });
-        //         // console.log("from handle sumit", response);
-        //     })
-        //     .catch(error => {
-        //         console.log(error.message);
-        //     });
+        axios
+            .post("/parent", {
+                title: this.state.title,
+                content: this.state.content,
+                genres: this.state.genres,
+                tags: this.state.tags,
+                thumb: this.state.thumb,
+                thumbDesc: this.state.thumbDesc
+            })
+            .then(response => {
+                this.props.history.push("/admin/parent");
+            })
+            .catch(error => {
+                console.log(error.message);
+            });
         console.log(this.state);
     }
 
@@ -280,6 +281,7 @@ class ParentNew extends Component {
                                     <input
                                         onChange={this.handleChangethumbDesc}
                                         type="text"
+                                        value={this.state.thumbDesc}
                                         placeholder="Thumbnail Description"
                                         className="form-control-lg form-control desc"
                                     />

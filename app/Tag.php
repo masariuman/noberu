@@ -14,4 +14,9 @@ class Tag extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function parent()
+    {
+        return $this->belongsToMany('App\Parent');
+    }
 }

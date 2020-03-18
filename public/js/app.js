@@ -92880,21 +92880,21 @@ function (_Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); // axios
-      //     .post("/masariuman_genre", {
-      //         create: this.state.create
-      //     })
-      //     .then(response => {
-      //         this.setState({
-      //             genre: [response.data.deeta_genre, ...this.state.genre],
-      //             create: ""
-      //         });
-      //         // console.log("from handle sumit", response);
-      //     })
-      //     .catch(error => {
-      //         console.log(error.message);
-      //     });
+      var _this2 = this;
 
+      e.preventDefault();
+      axios.post("/parent", {
+        title: this.state.title,
+        content: this.state.content,
+        genres: this.state.genres,
+        tags: this.state.tags,
+        thumb: this.state.thumb,
+        thumbDesc: this.state.thumbDesc
+      }).then(function (response) {
+        _this2.props.history.push("/admin/parent");
+      })["catch"](function (error) {
+        console.log(error.message);
+      });
       console.log(this.state);
     }
   }, {
@@ -92983,7 +92983,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-page-title"
@@ -93028,7 +93028,7 @@ function (_Component) {
         }, tag, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
           onClick: function onClick() {
-            _this2.removeTag(i);
+            _this3.removeTag(i);
           }
         }, "+"));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -93038,7 +93038,7 @@ function (_Component) {
         placeholder: "Tags",
         onKeyDown: this.inputKeyDown,
         ref: function ref(c) {
-          _this2.tagInput = c;
+          _this3.tagInput = c;
         }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-tag"
@@ -93050,7 +93050,7 @@ function (_Component) {
         }, genre, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
           onClick: function onClick() {
-            _this2.removeGenre(i);
+            _this3.removeGenre(i);
           }
         }, "+"));
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -93060,7 +93060,7 @@ function (_Component) {
         placeholder: "Genres",
         onKeyDown: this.inputKeyDownGenre,
         ref: function ref(c) {
-          _this2.genreInput = c;
+          _this3.genreInput = c;
         }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb"
@@ -93072,6 +93072,7 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChangethumbDesc,
         type: "text",
+        value: this.state.thumbDesc,
         placeholder: "Thumbnail Description",
         className: "form-control-lg form-control desc"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
