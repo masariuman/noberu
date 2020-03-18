@@ -9,6 +9,7 @@ import DashboardIndex from "./components/dashboard/Index";
 import ChildIndex from "./components/child/Index";
 import ParentIndex from "./components/parent/Index";
 import ParentNew from "./components/parent/New";
+import ParentEdit from "./components/parent/Edit";
 import CategoryIndex from "./components/category/Index";
 import CategoryEdit from "./components/category/Edit";
 import TagIndex from "./components/tag/Index";
@@ -44,6 +45,11 @@ if (document.getElementById("root")) {
                                 exact
                                 path="/admin/parent/new"
                                 component={ParentNew}
+                            />
+                            <Route
+                                exact
+                                path="/admin/parent/:url/edit"
+                                component={ParentEdit}
                             />
                             <Route
                                 exact

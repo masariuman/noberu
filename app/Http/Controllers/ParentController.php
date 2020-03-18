@@ -19,6 +19,17 @@ class ParentController extends Controller
     public function index()
     {
         //
+        $pagination = 5;
+        $novel = Novel::orderBy("id", "DESC")->paginate($pagination);
+        $count = $novel->CurrentPage()*$pagination-($pagination-1);
+        foreach ($novel as $novels) {
+            $novels['nomor'] = $count;
+            $count++;
+        }
+        // dd($gets);
+		return response()->json([
+            'data' => $novel
+		]);
     }
 
     /**
@@ -46,11 +57,7 @@ class ParentController extends Controller
             'thumbnail_desc' => $request->thumbDesc,
             'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
-        // $tag = Tag::orderBy("id", "DESC")->first();
-        // $tag['nomor'] = "NEW";
-        // return response()->json([
-        //     'deeta_tag' => $tag
-        // ]);
+
         $novel = Novel::orderBy("id", "DESC")->first();
         $tags = $request->tags;
         foreach ($tags as $tag) {
@@ -85,6 +92,11 @@ class ParentController extends Controller
                 $novel->category()->attach($data);
             }
         }
+
+        $novel = Novel::orderBy("id", "DESC")->get();
+        return response()->json([
+            'data' => $novel
+        ]);
     }
 
     /**
@@ -107,6 +119,10 @@ class ParentController extends Controller
     public function edit($id)
     {
         //
+        $novel = Novel::where("url",$id)->first();
+		return response()->json([
+            'data' => $novel
+		]);
     }
 
     /**
