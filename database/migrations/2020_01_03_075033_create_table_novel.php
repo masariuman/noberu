@@ -15,11 +15,11 @@ class CreateTableNovel extends Migration
     {
         Schema::create('novel', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->uuid('url');
-            $table->string('title');
-            $table->text('content');
-            $table->text('thumbnail');
-            $table->string('thumbnail_desc');
+            $table->string('url');
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->text('thumbnail')->nullable();
+            $table->string('thumbnail_desc')->nullable();
             $table->enum('status',[1,0,2])->default(1);
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class CreateTableTag extends Migration
         Schema::create('tag', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('url');
-            $table->string('tag');
+            $table->string('tag')->nullable();
             $table->enum('status',[1,0,2])->default(1);
             $table->timestamps();
         });

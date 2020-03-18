@@ -17,6 +17,6 @@ class Genre extends Model
 
     public function parent()
     {
-        return $this->belongsToMany('App\Parent');
+        return $this->belongsToMany('App\Novel');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Parent.php extends Model
+class Novel extends Model
 {
     //
     protected $table = 'novel';

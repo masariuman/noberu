@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\Genre;
+use App\Novel;
 use Uuid;
 use Illuminate\Support\Facades\Hash;
 
@@ -38,28 +39,32 @@ class ParentController extends Controller
      */
     public function store(Request $request)
     {
-        // $input['tag'] = $request->create;
-        // Tag::create([
-        //     'tag' => $input['tag'],
-        //     'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
-        // ]);
+        Novel::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'thumbnail' => $request->thumb,
+            'thumbnail_desc' => $request->thumbDesc,
+            'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+        ]);
         // $tag = Tag::orderBy("id", "DESC")->first();
         // $tag['nomor'] = "NEW";
         // return response()->json([
         //     'deeta_tag' => $tag
         // ]);
-
+        $novel = Novel::orderBy("id", "DESC")->first();
         $tags = $request->tags;
         foreach ($tags as $tag) {
             $data = Tag::where('tag',$tag)->first();
             if ($data) {
                 //nothing to add
+                $novel->tag()->attach($data);
             }
             else {
                 Tag::create([
                     'tag' => $tag,
                     'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
                 ]);
+                $novel->tag()->attach($data);
             }
         }
 
