@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class Category extends Model
 {
     protected $table = 'category';
     protected $fillable = [
@@ -15,7 +15,7 @@ class Genre extends Model
         'updated_at'
     ];
 
-    public function parent()
+    public function novel()
     {
         return $this->belongsToMany('App\Novel');
     }

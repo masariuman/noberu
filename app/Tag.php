@@ -15,7 +15,7 @@ class Tag extends Model
         'updated_at'
     ];
 
-    public function parent()
+    public function novel()
     {
         return $this->belongsToMany('App\Novel');
     }

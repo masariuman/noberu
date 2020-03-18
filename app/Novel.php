@@ -22,8 +22,8 @@ class Novel extends Model
         return $this->belongsToMany('App\Tag');
     }
 
-    public function genre()
+    public function category()
     {
-        return $this->belongsToMany('App\Genre');
+        return $this->belongsToMany('App\Category');
     }
 }

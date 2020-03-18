@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
-use App\Genre;
 use Uuid;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,7 +17,7 @@ class GenreController extends Controller
     public function index()
     {
         $pagination = 5;
-        $genre = Genre::orderBy("id", "DESC")->paginate($pagination);
+        $genre = Category::orderBy("id", "DESC")->paginate($pagination);
         $count = $genre->CurrentPage()*$pagination-($pagination-1);
         foreach ($genre as $genres) {
             $genres['nomor'] = $count;
@@ -48,11 +48,11 @@ class GenreController extends Controller
     public function store(Request $request)
     {
         $input['genre'] = $request->create;
-        Genre::create([
+        Category::create([
             'category' => $input['genre'],
             'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
-        $genre = Genre::orderBy("id", "DESC")->first();
+        $genre = Category::orderBy("id", "DESC")->first();
         $genre['nomor'] = "NEW";
         return response()->json([
             'deeta_genre' => $genre
@@ -78,7 +78,7 @@ class GenreController extends Controller
      */
     public function edit($id)
     {
-        $genre = Genre::where("url",$id)->first();
+        $genre = Category::where("url",$id)->first();
 		return response()->json([
             'deeta_genre' => $genre
 		]);
@@ -94,7 +94,7 @@ class GenreController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $genre = Genre::where("url",$id)->first();
+        $genre = Category::where("url",$id)->first();
         $genre->update([
             'category' => $request->content
         ]);

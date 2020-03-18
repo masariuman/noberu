@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
-use App\Genre;
+use App\Category;
 use App\Novel;
 use Uuid;
 use Illuminate\Support\Facades\Hash;
@@ -64,21 +64,25 @@ class ParentController extends Controller
                     'tag' => $tag,
                     'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
                 ]);
+                $data = Tag::where('tag',$tag)->first();
                 $novel->tag()->attach($data);
             }
         }
 
         $genres = $request->genres;
         foreach ($genres as $genre) {
-            $data = Genre::where('category',$genre)->first();
+            $data = Category::where('category',$genre)->first();
             if ($data) {
                 //nothing to add
+                $novel->category()->attach($data);
             }
             else {
-                Genre::create([
+                Category::create([
                     'category' => $genre,
                     'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
                 ]);
+                $data = Category::where('category',$genre)->first();
+                $novel->category()->attach($data);
             }
         }
     }

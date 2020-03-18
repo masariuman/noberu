@@ -13,7 +13,7 @@ class CreateTableNovelCategory extends Migration
      */
     public function up()
     {
-        Schema::create('novel_category', function (Blueprint $table) {
+        Schema::create('category_novel', function (Blueprint $table) {
             $table->unsignedBigInteger('novel_id');
             $table->foreign('novel_id')->references('id')->on('novel');
             $table->unsignedBigInteger('category_id');
