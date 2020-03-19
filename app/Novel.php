@@ -19,11 +19,11 @@ class Novel extends Model
 
     public function tag()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
     public function category()
     {
-        return $this->belongsToMany('App\Category');
+        return $this->belongsToMany('App\Category')->withTimestamps();
     }
 }

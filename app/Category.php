@@ -17,6 +17,6 @@ class Category extends Model
 
     public function novel()
     {
-        return $this->belongsToMany('App\Novel');
+        return $this->belongsToMany('App\Novel')->withTimestamps();
     }
 }

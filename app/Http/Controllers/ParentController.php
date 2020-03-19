@@ -120,6 +120,7 @@ class ParentController extends Controller
     {
         //
         $novel = Novel::where("url",$id)->first();
+        
 		return response()->json([
             'data' => $novel
 		]);
