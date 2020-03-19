@@ -120,7 +120,16 @@ class ParentController extends Controller
     {
         //
         $novel = Novel::where("url",$id)->first();
-        
+        $genres = [];
+        foreach ($novel->category as $genre) {
+            $genres[] = $genre->category;
+        }
+        $novel['genre'] = $genres;
+        $tags = [];
+        foreach ($novel->tag as $tagg) {
+            $tags[] = $tagg->tag;
+        }
+        $novel['tags'] = $tags;
 		return response()->json([
             'data' => $novel
 		]);

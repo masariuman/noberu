@@ -92908,8 +92908,8 @@ function (_Component) {
         _this3.setState({
           title: response.data.data.title,
           content: response.data.data.content,
-          genres: [],
-          tags: [],
+          genres: response.data.data.genre,
+          tags: response.data.data.tags,
           thumb: response.data.data.thumbnail,
           thumbDesc: response.data.data.thumbnail_desc
         });
