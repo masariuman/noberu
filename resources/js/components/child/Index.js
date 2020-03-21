@@ -88,13 +88,13 @@ class Child extends Component {
                     <div className="page-title-wrapper">
                         <div className="page-title-heading">
                             <div className="page-title-icon">
-                                <i className="pe-7s-notebook icon-gradient bg-happy-green"></i>
+                                <i className="pe-7s-bookmarks icon-gradient bg-happy-green"></i>
                             </div>
                             <div>
                                 PARENT NOVEL
                                 <div className="page-title-subheading">
                                     Halaman ini berfungsi untuk memanajemen
-                                    parent novel / TOC / Description Novel.
+                                    Child novel / Chapter Novel.
                                 </div>
                             </div>
                         </div>

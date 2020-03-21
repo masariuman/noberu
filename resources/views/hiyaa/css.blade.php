@@ -193,4 +193,15 @@
     .baton{
         font-size: 1.5em;
     }
+    .parents {
+        display: inline;
+        width: 90%;
+        float: right;
+        margin-bottom: 10px;
+    }
+    .parents-line {
+        float: left;
+        margin-top: 10px;
+        font-weight: bold;
+    }
 </style>

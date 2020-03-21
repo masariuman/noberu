@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Child;
+use App\Novel;
 use Uuid;
 use Illuminate\Support\Facades\Hash;
 
@@ -38,6 +39,17 @@ class ChildController extends Controller
     public function create()
     {
         //
+        $parent = Novel::all();
+        $parents = [];
+        $x = 0;
+        foreach ($parent as $toc) {
+            $parents['novel_parent'][$x]['title'] = $toc->title;
+            $parents['novel_parent'][$x]['url'] = $toc->url;
+            $x = $x+1;
+        }
+        return response()->json([
+            'data' => $parents
+		]);
     }
 
     /**
@@ -49,6 +61,19 @@ class ChildController extends Controller
     public function store(Request $request)
     {
         //
+        $parent = Novel::where('url',$request->parent)->first();
+        Child::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'novel_id' => $parent->id,
+            'thumbnail' => $request->thumb,
+            'thumbnail_desc' => $request->thumbDesc,
+            'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+        ]);
+        $novel = Child::orderBy("id", "DESC")->get();
+        return response()->json([
+            'data' => $novel
+        ]);
     }
 
     /**
