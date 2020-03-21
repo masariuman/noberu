@@ -17,6 +17,11 @@ class Novel extends Model
         'status'
     ];
 
+
+    public function child()
+    {
+        return $this->hasMany('App\Child','novel_id');
+    }
     public function tag()
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();

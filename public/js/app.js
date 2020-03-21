@@ -91765,6 +91765,7 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -91775,13 +91776,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -91790,16 +91792,124 @@ var Child =
 function (_Component) {
   _inherits(Child, _Component);
 
-  function Child() {
+  function Child(props) {
+    var _this;
+
     _classCallCheck(this, Child);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Child).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Child).call(this, props));
+    _this.state = {
+      novel: [],
+      pagination: [],
+      url: "/child"
+    };
+    _this.loadMore = _this.loadMore.bind(_assertThisInitialized(_this));
+    _this.renderNovel = _this.renderNovel.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Child, [{
+    key: "getNovel",
+    value: function getNovel() {
+      var _this2 = this;
+
+      axios.get(this.state.url === null ? "/child" : this.state.url).then(function (response) {
+        // console.log(response);
+        _this2.setState({
+          novel: _this2.state.novel.length > 0 ? _this2.state.novel.concat(response.data.data.data) : response.data.data.data,
+          url: response.data.data.next_page_url
+        });
+
+        _this2.getPagination(response.data.data);
+      });
+    }
+  }, {
+    key: "getPagination",
+    value: function getPagination(data) {
+      var pagination = {
+        current_page: data.current_page,
+        last_page: data.last_page,
+        next_page_url: data.next_page_url,
+        prev_page_url: data.prev_page_url
+      };
+      this.setState({
+        pagination: pagination
+      });
+    }
+  }, {
+    key: "loadMore",
+    value: function loadMore() {
+      this.setState({
+        url: this.state.pagination.next_page_url
+      });
+      this.componentDidMount();
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getNovel();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {// this.getGenre();
+    }
+  }, {
+    key: "renderNovel",
+    value: function renderNovel() {
+      return this.state.novel.map(function (novel) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: novel.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+          scope: "row"
+        }, novel.nomor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, novel.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/admin/child/".concat(novel.url, "/edit"),
+          className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-warning"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "pe-7s-pen"
+        }, " "), " Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/admin/child/".concat(novel.url, "/delete"),
+          className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-danger"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "pe-7s-trash"
+        }, " "), " Delete")));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "child novel");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-page-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "pe-7s-notebook icon-gradient bg-happy-green"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "PARENT NOVEL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-subheading"
+      }, "Halaman ini berfungsi untuk memanajemen parent novel / TOC / Description Novel."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-card mb-3 card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/admin/child/new",
+        className: "mb-2 mr-2 border-0 btn-transition btn btn-shadow btn-outline-success"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "pe-7s-plus"
+      }, " "), " Add New Novel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "table-responsive"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "mb-0 table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "width50px"
+      }, "NO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "width250px"
+      }, "ACTION"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.renderNovel())), this.state.pagination.next_page_url ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn-wide mb-2 mr-2 btn-icon btn-icon-right btn-shadow btn-pill btn btn-outline-success",
+        onClick: this.loadMore
+      }, "More") : ""))));
     }
   }]);
 
