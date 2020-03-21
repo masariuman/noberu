@@ -145,6 +145,97 @@ class ParentController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $novel = Novel::where("url",$id)->first();
+        $file = $request->thumb;
+        if($file){
+            $novel->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'thumbnail' => $request->thumb,
+                'thumbnail_desc' => $request->thumbDesc
+            ]);
+            $novel->category()->detach();
+            $novel->tag()->detach();
+            $tags = $request->tags;
+            foreach ($tags as $tag) {
+                $data = Tag::where('tag',$tag)->first();
+                if ($data) {
+                    //nothing to add
+                    $novel->tag()->attach($data);
+                }
+                else {
+                    Tag::create([
+                        'tag' => $tag,
+                        'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+                    ]);
+                    $data = Tag::where('tag',$tag)->first();
+                    $novel->tag()->attach($data);
+                }
+            }
+
+            $genres = $request->genres;
+            foreach ($genres as $genre) {
+                $data = Category::where('category',$genre)->first();
+                if ($data) {
+                    //nothing to add
+                    $novel->category()->attach($data);
+
+                }
+                else {
+                    Category::create([
+                        'category' => $genre,
+                        'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+                    ]);
+                    $data = Category::where('category',$genre)->first();
+                    $novel->category()->attach($data);
+                }
+            }
+        } else {
+            $novel->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'thumbnail_desc' => $request->thumbDesc
+            ]);
+            $novel->category()->detach();
+            $novel->tag()->detach();
+            $tags = $request->tags;
+            foreach ($tags as $tag) {
+                $data = Tag::where('tag',$tag)->first();
+                if ($data) {
+                    //nothing to add
+                    $novel->tag()->attach($data);
+                }
+                else {
+                    Tag::create([
+                        'tag' => $tag,
+                        'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+                    ]);
+                    $data = Tag::where('tag',$tag)->first();
+                    $novel->tag()->attach($data);
+                }
+            }
+
+            $genres = $request->genres;
+            foreach ($genres as $genre) {
+                $data = Category::where('category',$genre)->first();
+                if ($data) {
+                    //nothing to add
+                    $novel->category()->attach($data);
+                }
+                else {
+                    Category::create([
+                        'category' => $genre,
+                        'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+                    ]);
+                    $data = Category::where('category',$genre)->first();
+                    $novel->category()->attach($data);
+                }
+            }
+        }
+
+        return response()->json([
+            'data' => $novel
+		]);
     }
 
     /**

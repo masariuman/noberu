@@ -24,6 +24,7 @@ class ParentNew extends Component {
         this.handleChangeContent = this.handleChangeContent.bind(this);
         this.handleChangethumb = this.handleChangethumb.bind(this);
         this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+        this.fileInput = React.createRef();
     }
 
     handleChangeTitle(e) {
@@ -40,7 +41,7 @@ class ParentNew extends Component {
 
     handleChangethumb(e) {
         this.setState({
-            thumb: e.target.value
+            thumb: this.fileInput.current.files[0].name
         });
     }
 
@@ -67,7 +68,8 @@ class ParentNew extends Component {
             .catch(error => {
                 console.log(error.message);
             });
-        console.log(this.state);
+        // console.log(this.state);
+        // console.log(this.fileInput);
     }
 
     removeGenre(i) {
@@ -273,6 +275,7 @@ class ParentNew extends Component {
                                 </div>
                                 <div className="thumb">
                                     <input
+                                        ref={this.fileInput}
                                         onChange={this.handleChangethumb}
                                         type="file"
                                         placeholder="Thumbnail"

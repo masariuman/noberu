@@ -24,6 +24,7 @@ class ParentEdit extends Component {
         this.handleChangeContent = this.handleChangeContent.bind(this);
         this.handleChangethumb = this.handleChangethumb.bind(this);
         this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+        this.fileInput = React.createRef();
     }
 
     handleChangeTitle(e) {
@@ -40,7 +41,7 @@ class ParentEdit extends Component {
 
     handleChangethumb(e) {
         this.setState({
-            thumb: e.target.value
+            thumb: this.fileInput.current.files[0].name
         });
     }
 
@@ -53,7 +54,7 @@ class ParentEdit extends Component {
     handleSubmit(e) {
         e.preventDefault();
         axios
-            .post("/parent", {
+            .put(`/parent/${this.props.match.params.url}`, {
                 title: this.state.title,
                 content: this.state.content,
                 genres: this.state.genres,
@@ -293,6 +294,7 @@ class ParentEdit extends Component {
                                 </div>
                                 <div className="thumb">
                                     <input
+                                        ref={this.fileInput}
                                         onChange={this.handleChangethumb}
                                         type="file"
                                         placeholder="Thumbnail"
@@ -310,10 +312,10 @@ class ParentEdit extends Component {
                             <button
                                 type="button"
                                 onClick={this.handleSubmit}
-                                className="btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+                                className="btn-square btn-hover-shine btn btn-warning form-control form-control-lg baton"
                             >
-                                <a className="pe-7s-plus"></a> Novel Baru{" "}
-                                <a className="pe-7s-plus"></a>
+                                <a className="pe-7s-pen"></a> Edit Novel{" "}
+                                <a className="pe-7s-pen"></a>
                             </button>
                         </form>
                     </div>

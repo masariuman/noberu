@@ -92765,6 +92765,7 @@ function (_Component) {
     _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
     _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
     _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
+    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return _this;
   }
 
@@ -92786,7 +92787,7 @@ function (_Component) {
     key: "handleChangethumb",
     value: function handleChangethumb(e) {
       this.setState({
-        thumb: e.target.value
+        thumb: this.fileInput.current.files[0].name
       });
     }
   }, {
@@ -92802,7 +92803,7 @@ function (_Component) {
       var _this2 = this;
 
       e.preventDefault();
-      axios.post("/parent", {
+      axios.put("/parent/".concat(this.props.match.params.url), {
         title: this.state.title,
         content: this.state.content,
         genres: this.state.genres,
@@ -93006,6 +93007,7 @@ function (_Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        ref: this.fileInput,
         onChange: this.handleChangethumb,
         type: "file",
         placeholder: "Thumbnail",
@@ -93019,11 +93021,11 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.handleSubmit,
-        className: "btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+        className: "btn-square btn-hover-shine btn btn-warning form-control form-control-lg baton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "pe-7s-plus"
-      }), " Novel Baru", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "pe-7s-plus"
+        className: "pe-7s-pen"
+      }), " Edit Novel", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-pen"
       }))))));
     }
   }]);
@@ -93277,6 +93279,7 @@ function (_Component) {
     _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
     _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
     _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
+    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return _this;
   }
 
@@ -93298,7 +93301,7 @@ function (_Component) {
     key: "handleChangethumb",
     value: function handleChangethumb(e) {
       this.setState({
-        thumb: e.target.value
+        thumb: this.fileInput.current.files[0].name
       });
     }
   }, {
@@ -93325,8 +93328,8 @@ function (_Component) {
         _this2.props.history.push("/admin/parent");
       })["catch"](function (error) {
         console.log(error.message);
-      });
-      console.log(this.state);
+      }); // console.log(this.state);
+      // console.log(this.fileInput);
     }
   }, {
     key: "removeGenre",
@@ -93496,6 +93499,7 @@ function (_Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        ref: this.fileInput,
         onChange: this.handleChangethumb,
         type: "file",
         placeholder: "Thumbnail",
