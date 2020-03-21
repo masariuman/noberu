@@ -91169,14 +91169,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dashboard/Index */ "./resources/js/components/dashboard/Index.js");
 /* harmony import */ var _components_child_Index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/child/Index */ "./resources/js/components/child/Index.js");
 /* harmony import */ var _components_child_New__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/child/New */ "./resources/js/components/child/New.js");
-/* harmony import */ var _components_parent_Index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/parent/Index */ "./resources/js/components/parent/Index.js");
-/* harmony import */ var _components_parent_New__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/parent/New */ "./resources/js/components/parent/New.js");
-/* harmony import */ var _components_parent_Edit__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/parent/Edit */ "./resources/js/components/parent/Edit.js");
-/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
-/* harmony import */ var _components_category_Edit__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/category/Edit */ "./resources/js/components/category/Edit.js");
-/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
-/* harmony import */ var _components_tag_Edit__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tag/Edit */ "./resources/js/components/tag/Edit.js");
-/* harmony import */ var _components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/Empatkosongempat */ "./resources/js/components/Empatkosongempat.js");
+/* harmony import */ var _components_child_Edit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/child/Edit */ "./resources/js/components/child/Edit.js");
+/* harmony import */ var _components_parent_Index__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/parent/Index */ "./resources/js/components/parent/Index.js");
+/* harmony import */ var _components_parent_New__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/parent/New */ "./resources/js/components/parent/New.js");
+/* harmony import */ var _components_parent_Edit__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/parent/Edit */ "./resources/js/components/parent/Edit.js");
+/* harmony import */ var _components_category_Index__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/category/Index */ "./resources/js/components/category/Index.js");
+/* harmony import */ var _components_category_Edit__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/category/Edit */ "./resources/js/components/category/Edit.js");
+/* harmony import */ var _components_tag_Index__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tag/Index */ "./resources/js/components/tag/Index.js");
+/* harmony import */ var _components_tag_Edit__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/tag/Edit */ "./resources/js/components/tag/Edit.js");
+/* harmony import */ var _components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/Empatkosongempat */ "./resources/js/components/Empatkosongempat.js");
+
 
 
 
@@ -91217,33 +91219,37 @@ if (document.getElementById("root")) {
     component: _components_child_New__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
+    path: "/admin/child/:url/edit",
+    component: _components_child_Edit__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
     path: "/admin/parent",
-    component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _components_parent_Index__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/parent/new",
-    component: _components_parent_New__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _components_parent_New__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/parent/:url/edit",
-    component: _components_parent_Edit__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _components_parent_Edit__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/genre",
-    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_13__["default"]
+    component: _components_category_Index__WEBPACK_IMPORTED_MODULE_14__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/genre/:url/edit",
-    component: _components_category_Edit__WEBPACK_IMPORTED_MODULE_14__["default"]
+    component: _components_category_Edit__WEBPACK_IMPORTED_MODULE_15__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/tag",
-    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_15__["default"]
+    component: _components_tag_Index__WEBPACK_IMPORTED_MODULE_16__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/admin/tag/:url/edit",
-    component: _components_tag_Edit__WEBPACK_IMPORTED_MODULE_16__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_17__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
+    component: _components_tag_Edit__WEBPACK_IMPORTED_MODULE_17__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Empatkosongempat__WEBPACK_IMPORTED_MODULE_18__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_hbxcphyevn_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)))), document.getElementById("root"));
 }
 
 /***/ }),
@@ -91757,6 +91763,292 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Category);
+
+/***/ }),
+
+/***/ "./resources/js/components/child/Edit.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/child/Edit.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_summernote__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-summernote */ "./node_modules/react-summernote/dist/react-summernote.js");
+/* harmony import */ var react_summernote__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_summernote__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-summernote/dist/react-summernote.css */ "./node_modules/react-summernote/dist/react-summernote.css");
+/* harmony import */ var react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_summernote_dist_react_summernote_css__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+ // import styles
+
+var ChildNew =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ChildNew, _Component);
+
+  function ChildNew(props) {
+    var _this;
+
+    _classCallCheck(this, ChildNew);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ChildNew).call(this, props));
+    _this.state = {
+      title: "",
+      content: "",
+      parents: [],
+      parenturl: "",
+      parentcontent: "",
+      thumb: "",
+      thumbDesc: "",
+      url: ""
+    };
+    _this.onImageUpload = _this.onImageUpload.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChangeTitle = _this.handleChangeTitle.bind(_assertThisInitialized(_this));
+    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
+    _this.handleChangeParent = _this.handleChangeParent.bind(_assertThisInitialized(_this));
+    _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
+    _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
+    _this.renderSelect = _this.renderSelect.bind(_assertThisInitialized(_this));
+    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.ifSelected = _this.ifSelected.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ChildNew, [{
+    key: "handleChangeTitle",
+    value: function handleChangeTitle(e) {
+      this.setState({
+        title: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangeContent",
+    value: function handleChangeContent(e) {
+      this.setState({
+        content: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangeParent",
+    value: function handleChangeParent(e) {
+      this.setState({
+        parenturl: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangethumb",
+    value: function handleChangethumb(e) {
+      this.setState({
+        thumb: this.fileInput.current.files[0].name
+      });
+    }
+  }, {
+    key: "handleChangethumbDesc",
+    value: function handleChangethumbDesc(e) {
+      this.setState({
+        thumbDesc: e.target.value
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      axios.put("/child/".concat(this.props.match.params.url), {
+        title: this.state.title,
+        content: this.state.content,
+        parent: this.state.parent,
+        thumb: this.state.thumb,
+        thumbDesc: this.state.thumbDesc
+      }).then(function (response) {
+        _this2.props.history.push("/admin/child");
+      })["catch"](function (error) {
+        console.log(error.message);
+      }); // console.log(this.state);
+      // console.log(this.fileInput);
+    }
+  }, {
+    key: "onImageUpload",
+    value: function onImageUpload(images, insertImage) {
+      console.log("onImageUpload", images);
+      /* FileList does not support ordinary array methods */
+
+      var _loop = function _loop(i) {
+        /* Stores as bas64enc string in the text.
+         * Should potentially be stored separately and include just the url
+         */
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+          insertImage(reader.result);
+        };
+
+        reader.readAsDataURL(images[i]);
+      };
+
+      for (var i = 0; i < images.length; i++) {
+        _loop(i);
+      }
+    }
+  }, {
+    key: "getParent",
+    value: function getParent() {
+      var _this3 = this;
+
+      axios.get("/child/".concat(this.props.match.params.url, "/edit")).then(function (response) {
+        // console.log(response);
+        _this3.setState({
+          parents: response.data.data.parents.novel_parent,
+          parenturl: response.data.data.parent.url,
+          parentcontent: response.data.data.parent.title,
+          title: response.data.data.child.title,
+          content: response.data.data.child.content,
+          thumb: response.data.data.child.thumbnail,
+          thumbDesc: response.data.data.child.thumbnail_desc,
+          url: response.data.data.child.url
+        });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getParent();
+    }
+  }, {
+    key: "renderSelect",
+    value: function renderSelect() {
+      var _this4 = this;
+
+      return this.state.parents.map(function (par) {
+        if (_this4.state.parenturl == par.url) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: par.url,
+            key: par.url,
+            selected: true
+          }, par.title);
+        } else {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+            value: par.url,
+            key: par.url
+          }, par.title);
+        }
+      });
+    }
+  }, {
+    key: "ifSelected",
+    value: function ifSelected(x) {
+      if (this.state.parenturl == x) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: x,
+          key: x,
+          selected: true
+        }, par.title);
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: x,
+          key: x
+        }, par.title);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // console.log(this.state);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "app-page-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-heading"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-icon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "pe-7s-notebook icon-gradient bg-happy-green"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "NEW CHILD NOVEL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-title-subheading"
+      }, "Halaman ini berfungsi untuk membuat child novel / Chapter Novel baru."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main-card mb-3 card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "parents-line"
+      }, "Novel Parent :"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        onChange: this.handleChangeParent,
+        className: "form-control parents"
+      }, this.renderSelect())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChangeTitle,
+        value: this.state.title,
+        placeholder: "Title",
+        type: "text",
+        className: "mb-2 form-control-lg form-control"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_summernote__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        value: this.state.content,
+        options: {
+          lang: "ru-RU",
+          height: 350,
+          dialogsInBody: true,
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+        },
+        onChange: this.handleChangeContent,
+        onImageUpload: this.onImageUpload
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "thumb"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        ref: this.fileInput,
+        onChange: this.handleChangethumb,
+        type: "file",
+        placeholder: "Thumbnail",
+        className: "thumbinput"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleChangethumbDesc,
+        type: "text",
+        value: this.state.thumbDesc,
+        placeholder: "Thumbnail Description",
+        className: "form-control-lg form-control desc"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.handleSubmit,
+        className: "btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-plus"
+      }), " Chapter Baru", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-plus"
+      }))))));
+    }
+  }]);
+
+  return ChildNew;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (ChildNew);
 
 /***/ }),
 

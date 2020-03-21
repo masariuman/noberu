@@ -96,6 +96,19 @@ class ChildController extends Controller
     public function edit($id)
     {
         //
+        $parent = Novel::all();
+        $data['parents'] = [];
+        $x = 0;
+        foreach ($parent as $toc) {
+            $data['parents']['novel_parent'][$x]['title'] = $toc->title;
+            $data['parents']['novel_parent'][$x]['url'] = $toc->url;
+            $x = $x+1;
+        }
+        $data['child'] = Child::where('url',$id)->first();
+        $data['parent'] = Novel::where('id',$data['child']->novel_id)->first();
+        return response()->json([
+            'data' => $data
+		]);
     }
 
     /**

@@ -8,6 +8,7 @@ import Footer from "./components/hbxcphyevn/Footer";
 import DashboardIndex from "./components/dashboard/Index";
 import ChildIndex from "./components/child/Index";
 import ChildNew from "./components/child/New";
+import ChildEdit from "./components/child/Edit";
 import ParentIndex from "./components/parent/Index";
 import ParentNew from "./components/parent/New";
 import ParentEdit from "./components/parent/Edit";
@@ -41,6 +42,11 @@ if (document.getElementById("root")) {
                                 exact
                                 path="/admin/child/new"
                                 component={ChildNew}
+                            />
+                            <Route
+                                exact
+                                path="/admin/child/:url/edit"
+                                component={ChildEdit}
                             />
                             <Route
                                 exact
