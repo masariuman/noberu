@@ -64,7 +64,7 @@ class ChildNew extends Component {
             .put(`/child/${this.props.match.params.url}`, {
                 title: this.state.title,
                 content: this.state.content,
-                parent: this.state.parent,
+                parent: this.state.parenturl,
                 thumb: this.state.thumb,
                 thumbDesc: this.state.thumbDesc
             })
@@ -266,10 +266,10 @@ class ChildNew extends Component {
                             <button
                                 type="button"
                                 onClick={this.handleSubmit}
-                                className="btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+                                className="btn-square btn-hover-shine btn btn-warning form-control form-control-lg baton"
                             >
-                                <a className="pe-7s-plus"></a> Chapter Baru{" "}
-                                <a className="pe-7s-plus"></a>
+                                <a className="pe-7s-pen"></a> Ubah Chapter{" "}
+                                <a className="pe-7s-pen"></a>
                             </button>
                         </form>
                     </div>

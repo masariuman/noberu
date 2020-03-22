@@ -121,6 +121,36 @@ class ChildController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $child = Child::where('url',$id)->first();
+        $parent = Novel::where('url',$request->parent)->first();
+        $file = $request->thumb;
+        if($file){
+            $child->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'novel_id' => $parent->id,
+                'thumbnail' => $request->thumb,
+                'thumbnail_desc' => $request->thumbDesc
+            ]);
+        } else {
+            $child->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'novel_id' => $parent->id,
+                'thumbnail_desc' => $request->thumbDesc
+            ]);
+        }
+        $pagination = 5;
+        $novel = Child::orderBy("id", "DESC")->paginate($pagination);
+        $count = $novel->CurrentPage()*$pagination-($pagination-1);
+        foreach ($novel as $novels) {
+            $novels['nomor'] = $count;
+            $count++;
+        }
+        // dd($gets);
+		return response()->json([
+            'data' => $novel
+		]);
     }
 
     /**

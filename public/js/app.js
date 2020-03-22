@@ -91883,7 +91883,7 @@ function (_Component) {
       axios.put("/child/".concat(this.props.match.params.url), {
         title: this.state.title,
         content: this.state.content,
-        parent: this.state.parent,
+        parent: this.state.parenturl,
         thumb: this.state.thumb,
         thumbDesc: this.state.thumbDesc
       }).then(function (response) {
@@ -92036,11 +92036,11 @@ function (_Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.handleSubmit,
-        className: "btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"
+        className: "btn-square btn-hover-shine btn btn-warning form-control form-control-lg baton"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "pe-7s-plus"
-      }), " Chapter Baru", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "pe-7s-plus"
+        className: "pe-7s-pen"
+      }), " Ubah Chapter", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "pe-7s-pen"
       }))))));
     }
   }]);
