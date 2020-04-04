@@ -203,10 +203,33 @@ class ParentNew extends Component {
                                             ],
                                             ["table", ["table"]],
                                             [
+                                                "add",
+                                                [
+                                                    "addRowDown",
+                                                    "addRowUp",
+                                                    "addColLeft",
+                                                    "addColRight"
+                                                ]
+                                            ],
+                                            [
+                                                "delete",
+                                                [
+                                                    "deleteRow",
+                                                    "deleteCol",
+                                                    "deleteTable"
+                                                ]
+                                            ],
+                                            [
                                                 "insert",
                                                 [
                                                     "link",
+                                                    "unlink",
                                                     "picture",
+                                                    "resizeFull",
+                                                    "resizeHalf",
+                                                    "resizeQuarter",
+                                                    "resizeNone",
+                                                    "removeMedia",
                                                     "video",
                                                     "hr"
                                                 ]

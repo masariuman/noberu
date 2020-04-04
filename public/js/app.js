@@ -94106,7 +94106,7 @@ function (_Component) {
           lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
-          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "resizeFull", "resizeHalf", "resizeQuarter", "resizeNone", "removeMedia", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
         },
         onChange: this.handleChangeContent,
         onImageUpload: this.onImageUpload

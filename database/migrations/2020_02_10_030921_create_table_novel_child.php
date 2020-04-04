@@ -19,7 +19,7 @@ class CreateTableNovelChild extends Migration
             $table->unsignedBigInteger('novel_id');
             $table->foreign('novel_id')->references('id')->on('novel');
             $table->string('title')->nullable();
-            $table->text('content')->nullable();
+            $table->longText('content')->nullable();
             $table->text('thumbnail')->nullable();
             $table->string('thumbnail_desc')->nullable();
             $table->enum('status',[1,0,2])->default(1);
