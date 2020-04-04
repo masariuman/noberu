@@ -161,7 +161,7 @@ class ParentController extends Controller
                 else {
                     Tag::create([
                         'tag' => $tag,
-                        'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+                        'url' => str_replace('#','o',str_replace('.','A',str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))))
                     ]);
                     $data = Tag::where('tag',$tag)->first();
                     $novel->tag()->attach($data);

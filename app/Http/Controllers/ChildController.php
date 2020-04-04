@@ -70,7 +70,7 @@ class ChildController extends Controller
             'novel_id' => $parent->id,
             'thumbnail' => $request->thumb,
             'thumbnail_sidebar' => $request->thumbDesc,
-            'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
+            'url' => str_replace('#','o',str_replace('.','A',str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))))
         ]);
         $follower = Follower::where('status','1')->get();
         $mailcontent = Child::orderBy("id", "DESC")->first();
