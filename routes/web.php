@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
 Route::get('mail', function () {
     return view('emails.mails');
