@@ -12,6 +12,9 @@
 */
 Auth::routes();
 
+Route::get('mail', function () {
+    return view('emails.mails');
+});
 Route::resource('masariuman_tag', 'TagController');
 Route::resource('masariuman_genre', 'GenreController');
 Route::resource('parent', 'ParentController');

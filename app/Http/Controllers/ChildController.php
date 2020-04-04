@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Child;
 use App\Novel;
+use App\Follower;
 use Uuid;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class ChildController extends Controller
 {
@@ -70,6 +72,20 @@ class ChildController extends Controller
             'thumbnail_desc' => $request->thumbDesc,
             'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
+        $follower = Follower::where('status','1')->get();
+        $mailcontent = Child::orderBy("id", "DESC")->first();
+        foreach ($follower as $follow) {
+            $to_name = $follow->email;
+            $to_email = $follow->email;
+            $data = ['titleparent'=> $mailcontent->novel->title,
+            'titlechild'=>$mailcontent->title,
+            'url'=>$mailcontent->url];
+            Mail::send('emails.mails', $data, function($message) use ($to_name, $to_email) {
+                $message->to($to_email, $to_name)
+                ->subject(Child::orderBy("id", "DESC")->first()->title);
+                $message->from('masariumantranslation@gmail.com','MasariuManTranslation New Update');
+            });
+        }
         $novel = Child::orderBy("id", "DESC")->get();
         return response()->json([
             'data' => $novel
