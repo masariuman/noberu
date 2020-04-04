@@ -144,6 +144,7 @@ class ParentController extends Controller
     {
         //
         $novel = Novel::where("url",$id)->first();
+        $file = null;
         if($file){
             $novel->update([
                 'title' => $request->title,
