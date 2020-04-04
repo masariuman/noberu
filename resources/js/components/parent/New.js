@@ -225,13 +225,18 @@ class ParentNew extends Component {
                                                     "link",
                                                     "unlink",
                                                     "picture",
-                                                    "resizeFull",
-                                                    "resizeHalf",
-                                                    "resizeQuarter",
-                                                    "resizeNone",
                                                     "removeMedia",
                                                     "video",
                                                     "hr",
+                                                ],
+                                                [
+                                                    "image",
+                                                    [
+                                                        "resizeFull",
+                                                        "resizeHalf",
+                                                        "resizeQuarter",
+                                                        "resizeNone",
+                                                    ],
                                                 ],
                                             ],
                                             [

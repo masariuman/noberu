@@ -92014,7 +92014,7 @@ function (_Component) {
           lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
-          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "removeMedia", "video", "hr"]], ["image", ["resizeFull", "resizeHalf", "resizeQuarter", "resizeNone"]], ["view", ["fullscreen", "codeview"]]]
         },
         onChange: this.handleChangeContent,
         onImageUpload: this.onImageUpload
@@ -92024,13 +92024,13 @@ function (_Component) {
         onChange: this.handleChangethumb,
         value: this.state.thumb,
         type: "text",
-        placeholder: "Thumbnail Sidebar",
+        placeholder: "Thumbnail Home",
         className: "form-control-lg form-control thumbdesc"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChangethumbDesc,
         type: "text",
         value: this.state.thumbDesc,
-        placeholder: "Thumbnail Home",
+        placeholder: "Thumbnail Sidebar",
         className: "form-control-lg form-control desc"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -92429,7 +92429,7 @@ function (_Component) {
           lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
-          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "removeMedia", "video", "hr"], ["image", ["resizeFull", "resizeHalf", "resizeQuarter", "resizeNone"]]], ["view", ["fullscreen", "codeview"]]]
         },
         onChange: this.handleChangeContent,
         onImageUpload: this.onImageUpload
@@ -92439,13 +92439,13 @@ function (_Component) {
         onChange: this.handleChangethumb,
         value: this.state.thumb,
         type: "text",
-        placeholder: "Thumbnail Sidebar",
+        placeholder: "Thumbnail Home",
         className: "form-control-lg form-control thumbdesc"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChangethumbDesc,
         type: "text",
         value: this.state.thumbDesc,
-        placeholder: "Thumbnail Home",
+        placeholder: "Thumbnail Sidebar",
         className: "form-control-lg form-control desc"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -93608,7 +93608,7 @@ function (_Component) {
           lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
-          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["insert", ["link", "picture", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "removeMedia", "video", "hr"], ["image", ["resizeFull", "resizeHalf", "resizeQuarter", "resizeNone"]]], ["view", ["fullscreen", "codeview"]]]
         },
         onChange: this.handleChangeContent,
         onImageUpload: this.onImageUpload
@@ -94082,7 +94082,7 @@ function (_Component) {
           lang: "ru-RU",
           height: 350,
           dialogsInBody: true,
-          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "resizeFull", "resizeHalf", "resizeQuarter", "resizeNone", "removeMedia", "video", "hr"]], ["view", ["fullscreen", "codeview"]]]
+          toolbar: [["style", ["style"]], ["font", ["bold", "underline", "clear", "strikethrough", "superscript", "subscript", "clear"]], ["fontname", ["fontname", "fontsize", "color"]], ["para", ["ul", "ol", "paragraph", "height"]], ["table", ["table"]], ["add", ["addRowDown", "addRowUp", "addColLeft", "addColRight"]], ["delete", ["deleteRow", "deleteCol", "deleteTable"]], ["insert", ["link", "unlink", "picture", "removeMedia", "video", "hr"], ["image", ["resizeFull", "resizeHalf", "resizeQuarter", "resizeNone"]]], ["view", ["fullscreen", "codeview"]]]
         },
         onChange: this.handleChangeContent,
         onImageUpload: this.onImageUpload

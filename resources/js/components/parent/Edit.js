@@ -222,12 +222,40 @@ class ParentEdit extends Component {
                                             ],
                                             ["table", ["table"]],
                                             [
+                                                "add",
+                                                [
+                                                    "addRowDown",
+                                                    "addRowUp",
+                                                    "addColLeft",
+                                                    "addColRight",
+                                                ],
+                                            ],
+                                            [
+                                                "delete",
+                                                [
+                                                    "deleteRow",
+                                                    "deleteCol",
+                                                    "deleteTable",
+                                                ],
+                                            ],
+                                            [
                                                 "insert",
                                                 [
                                                     "link",
+                                                    "unlink",
                                                     "picture",
+                                                    "removeMedia",
                                                     "video",
                                                     "hr",
+                                                ],
+                                                [
+                                                    "image",
+                                                    [
+                                                        "resizeFull",
+                                                        "resizeHalf",
+                                                        "resizeQuarter",
+                                                        "resizeNone",
+                                                    ],
                                                 ],
                                             ],
                                             [

@@ -193,12 +193,40 @@ class ChildNew extends Component {
                                             ],
                                             ["table", ["table"]],
                                             [
+                                                "add",
+                                                [
+                                                    "addRowDown",
+                                                    "addRowUp",
+                                                    "addColLeft",
+                                                    "addColRight",
+                                                ],
+                                            ],
+                                            [
+                                                "delete",
+                                                [
+                                                    "deleteRow",
+                                                    "deleteCol",
+                                                    "deleteTable",
+                                                ],
+                                            ],
+                                            [
                                                 "insert",
                                                 [
                                                     "link",
+                                                    "unlink",
                                                     "picture",
+                                                    "removeMedia",
                                                     "video",
                                                     "hr",
+                                                ],
+                                                [
+                                                    "image",
+                                                    [
+                                                        "resizeFull",
+                                                        "resizeHalf",
+                                                        "resizeQuarter",
+                                                        "resizeNone",
+                                                    ],
                                                 ],
                                             ],
                                             [
@@ -215,14 +243,14 @@ class ChildNew extends Component {
                                         onChange={this.handleChangethumb}
                                         value={this.state.thumb}
                                         type="text"
-                                        placeholder="Thumbnail Sidebar"
+                                        placeholder="Thumbnail Home"
                                         className="form-control-lg form-control thumbdesc"
                                     />
                                     <input
                                         onChange={this.handleChangethumbDesc}
                                         type="text"
                                         value={this.state.thumbDesc}
-                                        placeholder="Thumbnail Home"
+                                        placeholder="Thumbnail Sidebar"
                                         className="form-control-lg form-control desc"
                                     />
                                 </div>
