@@ -91834,7 +91834,6 @@ function (_Component) {
     _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
     _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
     _this.renderSelect = _this.renderSelect.bind(_assertThisInitialized(_this));
-    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     _this.ifSelected = _this.ifSelected.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -91864,7 +91863,7 @@ function (_Component) {
     key: "handleChangethumb",
     value: function handleChangethumb(e) {
       this.setState({
-        thumb: this.fileInput.current.files[0].name
+        thumb: e.target.value
       });
     }
   }, {
@@ -91930,7 +91929,7 @@ function (_Component) {
           title: response.data.data.child.title,
           content: response.data.data.child.content,
           thumb: response.data.data.child.thumbnail,
-          thumbDesc: response.data.data.child.thumbnail_desc,
+          thumbDesc: response.data.data.child.thumbnail_sidebar,
           url: response.data.data.child.url
         });
       });
@@ -92022,16 +92021,16 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        ref: this.fileInput,
         onChange: this.handleChangethumb,
-        type: "file",
-        placeholder: "Thumbnail",
-        className: "thumbinput"
+        value: this.state.thumb,
+        type: "text",
+        placeholder: "Thumbnail Sidebar",
+        className: "form-control-lg form-control thumbdesc"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChangethumbDesc,
         type: "text",
         value: this.state.thumbDesc,
-        placeholder: "Thumbnail Description",
+        placeholder: "Thumbnail Home",
         className: "form-control-lg form-control desc"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -92284,7 +92283,6 @@ function (_Component) {
     _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
     _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
     _this.renderSelect = _this.renderSelect.bind(_assertThisInitialized(_this));
-    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
     return _this;
   }
 
@@ -92313,7 +92311,7 @@ function (_Component) {
     key: "handleChangethumb",
     value: function handleChangethumb(e) {
       this.setState({
-        thumb: this.fileInput.current.files[0].name
+        thumb: e.target.value
       });
     }
   }, {
@@ -92438,16 +92436,16 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "thumb"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        ref: this.fileInput,
         onChange: this.handleChangethumb,
-        type: "file",
-        placeholder: "Thumbnail",
-        className: "thumbinput"
+        value: this.state.thumb,
+        type: "text",
+        placeholder: "Thumbnail Sidebar",
+        className: "form-control-lg form-control thumbdesc"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleChangethumbDesc,
         type: "text",
         value: this.state.thumbDesc,
-        placeholder: "Thumbnail Description",
+        placeholder: "Thumbnail Home",
         className: "form-control-lg form-control desc"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
@@ -93420,10 +93418,10 @@ function (_Component) {
     _this.inputKeyDownGenre = _this.inputKeyDownGenre.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChangeTitle = _this.handleChangeTitle.bind(_assertThisInitialized(_this));
-    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
-    _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
-    _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
-    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this)); // this.handleChangethumb = this.handleChangethumb.bind(this);
+    // this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+    // this.fileInput = React.createRef();
+
     return _this;
   }
 
@@ -93440,21 +93438,17 @@ function (_Component) {
       this.setState({
         content: e
       });
-    }
-  }, {
-    key: "handleChangethumb",
-    value: function handleChangethumb(e) {
-      this.setState({
-        thumb: this.fileInput.current.files[0].name
-      });
-    }
-  }, {
-    key: "handleChangethumbDesc",
-    value: function handleChangethumbDesc(e) {
-      this.setState({
-        thumbDesc: e.target.value
-      });
-    }
+    } // handleChangethumb(e) {
+    //     this.setState({
+    //         thumb: this.fileInput.current.files[0].name,
+    //     });
+    // }
+    // handleChangethumbDesc(e) {
+    //     this.setState({
+    //         thumbDesc: e.target.value,
+    //     });
+    // }
+
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -93568,9 +93562,9 @@ function (_Component) {
           title: response.data.data.title,
           content: response.data.data.content,
           genres: response.data.data.genre,
-          tags: response.data.data.tags,
-          thumb: response.data.data.thumbnail,
-          thumbDesc: response.data.data.thumbnail_desc
+          tags: response.data.data.tags // thumb: response.data.data.thumbnail,
+          // thumbDesc: response.data.data.thumbnail_desc
+
         });
       });
     }
@@ -93662,21 +93656,7 @@ function (_Component) {
         ref: function ref(c) {
           _this4.genreInput = c;
         }
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "thumb"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        ref: this.fileInput,
-        onChange: this.handleChangethumb,
-        type: "file",
-        placeholder: "Thumbnail",
-        className: "thumbinput"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.handleChangethumbDesc,
-        type: "text",
-        value: this.state.thumbDesc,
-        placeholder: "Thumbnail Description",
-        className: "form-control-lg form-control desc"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.handleSubmit,
         className: "btn-square btn-hover-shine btn btn-warning form-control form-control-lg baton"
@@ -93934,10 +93914,10 @@ function (_Component) {
     _this.inputKeyDownGenre = _this.inputKeyDownGenre.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChangeTitle = _this.handleChangeTitle.bind(_assertThisInitialized(_this));
-    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this));
-    _this.handleChangethumb = _this.handleChangethumb.bind(_assertThisInitialized(_this));
-    _this.handleChangethumbDesc = _this.handleChangethumbDesc.bind(_assertThisInitialized(_this));
-    _this.fileInput = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.handleChangeContent = _this.handleChangeContent.bind(_assertThisInitialized(_this)); // this.handleChangethumb = this.handleChangethumb.bind(this);
+    // this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+    // this.fileInput = React.createRef();
+
     return _this;
   }
 
@@ -93954,21 +93934,17 @@ function (_Component) {
       this.setState({
         content: e
       });
-    }
-  }, {
-    key: "handleChangethumb",
-    value: function handleChangethumb(e) {
-      this.setState({
-        thumb: this.fileInput.current.files[0].name
-      });
-    }
-  }, {
-    key: "handleChangethumbDesc",
-    value: function handleChangethumbDesc(e) {
-      this.setState({
-        thumbDesc: e.target.value
-      });
-    }
+    } // handleChangethumb(e) {
+    //     this.setState({
+    //         thumb: this.fileInput.current.files[0].name,
+    //     });
+    // }
+    // handleChangethumbDesc(e) {
+    //     this.setState({
+    //         thumbDesc: e.target.value,
+    //     });
+    // }
+
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -94154,21 +94130,7 @@ function (_Component) {
         ref: function ref(c) {
           _this3.genreInput = c;
         }
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "thumb"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        ref: this.fileInput,
-        onChange: this.handleChangethumb,
-        type: "file",
-        placeholder: "Thumbnail",
-        className: "thumbinput"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.handleChangethumbDesc,
-        type: "text",
-        value: this.state.thumbDesc,
-        placeholder: "Thumbnail Description",
-        className: "form-control-lg form-control desc"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.handleSubmit,
         className: "btn-square btn-hover-shine btn btn-primary form-control form-control-lg baton"

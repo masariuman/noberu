@@ -181,8 +181,15 @@
     }
     .desc {
         display: inline;
-        width: 70%;
+        width: 49%;
         float: right;
+        margin-bottom: 10px;
+    }
+    .thumbdesc {
+        display: inline;
+        width: 49%;
+        float: left;
+        margin-bottom: 10px;
     }
     .thumb {
         margin-top: 10px;

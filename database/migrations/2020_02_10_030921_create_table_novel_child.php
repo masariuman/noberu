@@ -21,6 +21,7 @@ class CreateTableNovelChild extends Migration
             $table->string('title')->nullable();
             $table->longText('content')->nullable();
             $table->text('thumbnail')->nullable();
+            $table->text('thumbnail_sidebar')->nullable();
             $table->string('thumbnail_desc')->nullable();
             $table->enum('status',[1,0,2])->default(1);
             $table->timestamps();

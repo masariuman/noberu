@@ -12,7 +12,7 @@ class ParentEdit extends Component {
             genres: [],
             tags: [],
             thumb: "",
-            thumbDesc: ""
+            thumbDesc: "",
         };
         this.onImageUpload = this.onImageUpload.bind(this);
         this.removeTag = this.removeTag.bind(this);
@@ -22,34 +22,34 @@ class ParentEdit extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeContent = this.handleChangeContent.bind(this);
-        this.handleChangethumb = this.handleChangethumb.bind(this);
-        this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
-        this.fileInput = React.createRef();
+        // this.handleChangethumb = this.handleChangethumb.bind(this);
+        // this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+        // this.fileInput = React.createRef();
     }
 
     handleChangeTitle(e) {
         this.setState({
-            title: e.target.value
+            title: e.target.value,
         });
     }
 
     handleChangeContent(e) {
         this.setState({
-            content: e
+            content: e,
         });
     }
 
-    handleChangethumb(e) {
-        this.setState({
-            thumb: this.fileInput.current.files[0].name
-        });
-    }
+    // handleChangethumb(e) {
+    //     this.setState({
+    //         thumb: this.fileInput.current.files[0].name,
+    //     });
+    // }
 
-    handleChangethumbDesc(e) {
-        this.setState({
-            thumbDesc: e.target.value
-        });
-    }
+    // handleChangethumbDesc(e) {
+    //     this.setState({
+    //         thumbDesc: e.target.value,
+    //     });
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -60,12 +60,12 @@ class ParentEdit extends Component {
                 genres: this.state.genres,
                 tags: this.state.tags,
                 thumb: this.state.thumb,
-                thumbDesc: this.state.thumbDesc
+                thumbDesc: this.state.thumbDesc,
             })
-            .then(response => {
+            .then((response) => {
                 this.props.history.push("/admin/parent");
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error.message);
             });
         console.log(this.state);
@@ -82,7 +82,7 @@ class ParentEdit extends Component {
         if (e.key === "Enter" && val) {
             if (
                 this.state.genres.find(
-                    genre => genre.toLowerCase() === val.toLowerCase()
+                    (genre) => genre.toLowerCase() === val.toLowerCase()
                 )
             ) {
                 return;
@@ -105,7 +105,7 @@ class ParentEdit extends Component {
         if (e.key === "Enter" && val) {
             if (
                 this.state.tags.find(
-                    tag => tag.toLowerCase() === val.toLowerCase()
+                    (tag) => tag.toLowerCase() === val.toLowerCase()
                 )
             ) {
                 return;
@@ -137,14 +137,14 @@ class ParentEdit extends Component {
     getNovel() {
         axios
             .get(`/parent/${this.props.match.params.url}/edit`)
-            .then(response => {
+            .then((response) => {
                 this.setState({
                     title: response.data.data.title,
                     content: response.data.data.content,
                     genres: response.data.data.genre,
                     tags: response.data.data.tags,
-                    thumb: response.data.data.thumbnail,
-                    thumbDesc: response.data.data.thumbnail_desc
+                    // thumb: response.data.data.thumbnail,
+                    // thumbDesc: response.data.data.thumbnail_desc
                 });
             });
     }
@@ -200,16 +200,16 @@ class ParentEdit extends Component {
                                                     "strikethrough",
                                                     "superscript",
                                                     "subscript",
-                                                    "clear"
-                                                ]
+                                                    "clear",
+                                                ],
                                             ],
                                             [
                                                 "fontname",
                                                 [
                                                     "fontname",
                                                     "fontsize",
-                                                    "color"
-                                                ]
+                                                    "color",
+                                                ],
                                             ],
                                             [
                                                 "para",
@@ -217,8 +217,8 @@ class ParentEdit extends Component {
                                                     "ul",
                                                     "ol",
                                                     "paragraph",
-                                                    "height"
-                                                ]
+                                                    "height",
+                                                ],
                                             ],
                                             ["table", ["table"]],
                                             [
@@ -227,11 +227,14 @@ class ParentEdit extends Component {
                                                     "link",
                                                     "picture",
                                                     "video",
-                                                    "hr"
-                                                ]
+                                                    "hr",
+                                                ],
                                             ],
-                                            ["view", ["fullscreen", "codeview"]]
-                                        ]
+                                            [
+                                                "view",
+                                                ["fullscreen", "codeview"],
+                                            ],
+                                        ],
                                     }}
                                     onChange={this.handleChangeContent}
                                     onImageUpload={this.onImageUpload}
@@ -256,7 +259,7 @@ class ParentEdit extends Component {
                                                 type="text"
                                                 placeholder="Tags"
                                                 onKeyDown={this.inputKeyDown}
-                                                ref={c => {
+                                                ref={(c) => {
                                                     this.tagInput = c;
                                                 }}
                                             />
@@ -285,14 +288,14 @@ class ParentEdit extends Component {
                                                 onKeyDown={
                                                     this.inputKeyDownGenre
                                                 }
-                                                ref={c => {
+                                                ref={(c) => {
                                                     this.genreInput = c;
                                                 }}
                                             />
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="thumb">
+                                {/* <div className="thumb">
                                     <input
                                         ref={this.fileInput}
                                         onChange={this.handleChangethumb}
@@ -307,7 +310,7 @@ class ParentEdit extends Component {
                                         placeholder="Thumbnail Description"
                                         className="form-control-lg form-control desc"
                                     />
-                                </div>
+                                </div> */}
                             </div>
                             <button
                                 type="button"

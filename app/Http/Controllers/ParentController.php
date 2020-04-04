@@ -53,8 +53,6 @@ class ParentController extends Controller
         Novel::create([
             'title' => $request->title,
             'content' => $request->content,
-            'thumbnail' => $request->thumb,
-            'thumbnail_desc' => $request->thumbDesc,
             'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
 
@@ -146,13 +144,10 @@ class ParentController extends Controller
     {
         //
         $novel = Novel::where("url",$id)->first();
-        $file = $request->thumb;
         if($file){
             $novel->update([
                 'title' => $request->title,
                 'content' => $request->content,
-                'thumbnail' => $request->thumb,
-                'thumbnail_desc' => $request->thumbDesc
             ]);
             $novel->category()->detach();
             $novel->tag()->detach();
@@ -194,7 +189,6 @@ class ParentController extends Controller
             $novel->update([
                 'title' => $request->title,
                 'content' => $request->content,
-                'thumbnail_desc' => $request->thumbDesc
             ]);
             $novel->category()->detach();
             $novel->tag()->detach();

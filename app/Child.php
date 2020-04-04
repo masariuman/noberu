@@ -13,6 +13,7 @@ class Child extends Model
         'title',
         'content',
         'thumbnail',
+        'thumbnail_sidebar',
         'thumbnail_desc',
         'status'
     ];

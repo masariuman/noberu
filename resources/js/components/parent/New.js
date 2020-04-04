@@ -12,7 +12,7 @@ class ParentNew extends Component {
             genres: [],
             tags: [],
             thumb: "",
-            thumbDesc: ""
+            thumbDesc: "",
         };
         this.onImageUpload = this.onImageUpload.bind(this);
         this.removeTag = this.removeTag.bind(this);
@@ -22,34 +22,34 @@ class ParentNew extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeContent = this.handleChangeContent.bind(this);
-        this.handleChangethumb = this.handleChangethumb.bind(this);
-        this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
-        this.fileInput = React.createRef();
+        // this.handleChangethumb = this.handleChangethumb.bind(this);
+        // this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
+        // this.fileInput = React.createRef();
     }
 
     handleChangeTitle(e) {
         this.setState({
-            title: e.target.value
+            title: e.target.value,
         });
     }
 
     handleChangeContent(e) {
         this.setState({
-            content: e
+            content: e,
         });
     }
 
-    handleChangethumb(e) {
-        this.setState({
-            thumb: this.fileInput.current.files[0].name
-        });
-    }
+    // handleChangethumb(e) {
+    //     this.setState({
+    //         thumb: this.fileInput.current.files[0].name,
+    //     });
+    // }
 
-    handleChangethumbDesc(e) {
-        this.setState({
-            thumbDesc: e.target.value
-        });
-    }
+    // handleChangethumbDesc(e) {
+    //     this.setState({
+    //         thumbDesc: e.target.value,
+    //     });
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -60,12 +60,12 @@ class ParentNew extends Component {
                 genres: this.state.genres,
                 tags: this.state.tags,
                 thumb: this.state.thumb,
-                thumbDesc: this.state.thumbDesc
+                thumbDesc: this.state.thumbDesc,
             })
-            .then(response => {
+            .then((response) => {
                 this.props.history.push("/admin/parent");
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error.message);
             });
         // console.log(this.state);
@@ -83,7 +83,7 @@ class ParentNew extends Component {
         if (e.key === "Enter" && val) {
             if (
                 this.state.genres.find(
-                    genre => genre.toLowerCase() === val.toLowerCase()
+                    (genre) => genre.toLowerCase() === val.toLowerCase()
                 )
             ) {
                 return;
@@ -106,7 +106,7 @@ class ParentNew extends Component {
         if (e.key === "Enter" && val) {
             if (
                 this.state.tags.find(
-                    tag => tag.toLowerCase() === val.toLowerCase()
+                    (tag) => tag.toLowerCase() === val.toLowerCase()
                 )
             ) {
                 return;
@@ -181,16 +181,16 @@ class ParentNew extends Component {
                                                     "strikethrough",
                                                     "superscript",
                                                     "subscript",
-                                                    "clear"
-                                                ]
+                                                    "clear",
+                                                ],
                                             ],
                                             [
                                                 "fontname",
                                                 [
                                                     "fontname",
                                                     "fontsize",
-                                                    "color"
-                                                ]
+                                                    "color",
+                                                ],
                                             ],
                                             [
                                                 "para",
@@ -198,8 +198,8 @@ class ParentNew extends Component {
                                                     "ul",
                                                     "ol",
                                                     "paragraph",
-                                                    "height"
-                                                ]
+                                                    "height",
+                                                ],
                                             ],
                                             ["table", ["table"]],
                                             [
@@ -208,16 +208,16 @@ class ParentNew extends Component {
                                                     "addRowDown",
                                                     "addRowUp",
                                                     "addColLeft",
-                                                    "addColRight"
-                                                ]
+                                                    "addColRight",
+                                                ],
                                             ],
                                             [
                                                 "delete",
                                                 [
                                                     "deleteRow",
                                                     "deleteCol",
-                                                    "deleteTable"
-                                                ]
+                                                    "deleteTable",
+                                                ],
                                             ],
                                             [
                                                 "insert",
@@ -231,11 +231,14 @@ class ParentNew extends Component {
                                                     "resizeNone",
                                                     "removeMedia",
                                                     "video",
-                                                    "hr"
-                                                ]
+                                                    "hr",
+                                                ],
                                             ],
-                                            ["view", ["fullscreen", "codeview"]]
-                                        ]
+                                            [
+                                                "view",
+                                                ["fullscreen", "codeview"],
+                                            ],
+                                        ],
                                     }}
                                     onChange={this.handleChangeContent}
                                     onImageUpload={this.onImageUpload}
@@ -260,7 +263,7 @@ class ParentNew extends Component {
                                                 type="text"
                                                 placeholder="Tags"
                                                 onKeyDown={this.inputKeyDown}
-                                                ref={c => {
+                                                ref={(c) => {
                                                     this.tagInput = c;
                                                 }}
                                             />
@@ -289,14 +292,14 @@ class ParentNew extends Component {
                                                 onKeyDown={
                                                     this.inputKeyDownGenre
                                                 }
-                                                ref={c => {
+                                                ref={(c) => {
                                                     this.genreInput = c;
                                                 }}
                                             />
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="thumb">
+                                {/* <div className="thumb">
                                     <input
                                         ref={this.fileInput}
                                         onChange={this.handleChangethumb}
@@ -311,7 +314,7 @@ class ParentNew extends Component {
                                         placeholder="Thumbnail Description"
                                         className="form-control-lg form-control desc"
                                     />
-                                </div>
+                                </div> */}
                             </div>
                             <button
                                 type="button"

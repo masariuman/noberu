@@ -14,7 +14,7 @@ class ChildNew extends Component {
             parentcontent: "",
             thumb: "",
             thumbDesc: "",
-            url: ""
+            url: "",
         };
         this.onImageUpload = this.onImageUpload.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,37 +24,36 @@ class ChildNew extends Component {
         this.handleChangethumb = this.handleChangethumb.bind(this);
         this.handleChangethumbDesc = this.handleChangethumbDesc.bind(this);
         this.renderSelect = this.renderSelect.bind(this);
-        this.fileInput = React.createRef();
         this.ifSelected = this.ifSelected.bind(this);
     }
 
     handleChangeTitle(e) {
         this.setState({
-            title: e.target.value
+            title: e.target.value,
         });
     }
 
     handleChangeContent(e) {
         this.setState({
-            content: e.target.value
+            content: e.target.value,
         });
     }
 
     handleChangeParent(e) {
         this.setState({
-            parenturl: e.target.value
+            parenturl: e.target.value,
         });
     }
 
     handleChangethumb(e) {
         this.setState({
-            thumb: this.fileInput.current.files[0].name
+            thumbpa: e.target.value,
         });
     }
 
     handleChangethumbDesc(e) {
         this.setState({
-            thumbDesc: e.target.value
+            thumbDesc: e.target.value,
         });
     }
 
@@ -66,12 +65,12 @@ class ChildNew extends Component {
                 content: this.state.content,
                 parent: this.state.parenturl,
                 thumb: this.state.thumb,
-                thumbDesc: this.state.thumbDesc
+                thumbDesc: this.state.thumbDesc,
             })
-            .then(response => {
+            .then((response) => {
                 this.props.history.push("/admin/child");
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error.message);
             });
         // console.log(this.state);
@@ -98,7 +97,7 @@ class ChildNew extends Component {
     getParent() {
         axios
             .get(`/child/${this.props.match.params.url}/edit`)
-            .then(response => {
+            .then((response) => {
                 // console.log(response);
                 this.setState({
                     parents: response.data.data.parents.novel_parent,
@@ -107,8 +106,8 @@ class ChildNew extends Component {
                     title: response.data.data.child.title,
                     content: response.data.data.child.content,
                     thumb: response.data.data.child.thumbnail,
-                    thumbDesc: response.data.data.child.thumbnail_desc,
-                    url: response.data.data.child.url
+                    thumbDesc: response.data.data.child.thumbnail_sidebar,
+                    url: response.data.data.child.url,
                 });
             });
     }
@@ -118,7 +117,7 @@ class ChildNew extends Component {
     }
 
     renderSelect() {
-        return this.state.parents.map(par => {
+        return this.state.parents.map((par) => {
             if (this.state.parenturl == par.url) {
                 return (
                     <option value={par.url} key={par.url} selected>
@@ -210,16 +209,16 @@ class ChildNew extends Component {
                                                     "strikethrough",
                                                     "superscript",
                                                     "subscript",
-                                                    "clear"
-                                                ]
+                                                    "clear",
+                                                ],
                                             ],
                                             [
                                                 "fontname",
                                                 [
                                                     "fontname",
                                                     "fontsize",
-                                                    "color"
-                                                ]
+                                                    "color",
+                                                ],
                                             ],
                                             [
                                                 "para",
@@ -227,8 +226,8 @@ class ChildNew extends Component {
                                                     "ul",
                                                     "ol",
                                                     "paragraph",
-                                                    "height"
-                                                ]
+                                                    "height",
+                                                ],
                                             ],
                                             ["table", ["table"]],
                                             [
@@ -237,28 +236,31 @@ class ChildNew extends Component {
                                                     "link",
                                                     "picture",
                                                     "video",
-                                                    "hr"
-                                                ]
+                                                    "hr",
+                                                ],
                                             ],
-                                            ["view", ["fullscreen", "codeview"]]
-                                        ]
+                                            [
+                                                "view",
+                                                ["fullscreen", "codeview"],
+                                            ],
+                                        ],
                                     }}
                                     onChange={this.handleChangeContent}
                                     onImageUpload={this.onImageUpload}
                                 />
                                 <div className="thumb">
                                     <input
-                                        ref={this.fileInput}
                                         onChange={this.handleChangethumb}
-                                        type="file"
-                                        placeholder="Thumbnail"
-                                        className="thumbinput"
+                                        value={this.state.thumb}
+                                        type="text"
+                                        placeholder="Thumbnail Sidebar"
+                                        className="form-control-lg form-control thumbdesc"
                                     />
                                     <input
                                         onChange={this.handleChangethumbDesc}
                                         type="text"
                                         value={this.state.thumbDesc}
-                                        placeholder="Thumbnail Description"
+                                        placeholder="Thumbnail Home"
                                         className="form-control-lg form-control desc"
                                     />
                                 </div>

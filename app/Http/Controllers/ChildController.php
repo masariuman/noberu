@@ -69,7 +69,7 @@ class ChildController extends Controller
             'content' => $request->content,
             'novel_id' => $parent->id,
             'thumbnail' => $request->thumb,
-            'thumbnail_desc' => $request->thumbDesc,
+            'thumbnail_sidebar' => $request->thumbDesc,
             'url' => str_replace('/','$',Hash::make(Hash::make(Uuid::generate()->string)))
         ]);
         $follower = Follower::where('status','1')->get();
@@ -78,8 +78,9 @@ class ChildController extends Controller
             $to_name = $follow->email;
             $to_email = $follow->email;
             $data = ['titleparent'=> $mailcontent->novel->title,
-            'titlechild'=>$mailcontent->title,
-            'url'=>$mailcontent->url];
+                    'titlechild'=>$mailcontent->title,
+                    'url'=>$mailcontent->url,
+                    'thumb'=>$mailcontent->thumbnail_sidebar];
             Mail::send('emails.mails', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)
                 ->subject(Child::orderBy("id", "DESC")->first()->title);
@@ -146,14 +147,14 @@ class ChildController extends Controller
                 'content' => $request->content,
                 'novel_id' => $parent->id,
                 'thumbnail' => $request->thumb,
-                'thumbnail_desc' => $request->thumbDesc
+                'thumbnail_sidebar' => $request->thumbDesc
             ]);
         } else {
             $child->update([
                 'title' => $request->title,
                 'content' => $request->content,
                 'novel_id' => $parent->id,
-                'thumbnail_desc' => $request->thumbDesc
+                'thumbnail_sidebar' => $request->thumbDesc
             ]);
         }
         $pagination = 5;
