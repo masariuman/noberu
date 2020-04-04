@@ -47,7 +47,7 @@ class ChildNew extends Component {
 
     handleChangethumb(e) {
         this.setState({
-            thumbpa: e.target.value,
+            thumb: e.target.value,
         });
     }
 
