@@ -35,7 +35,7 @@ class ChildNew extends Component {
 
     handleChangeContent(e) {
         this.setState({
-            content: e.target.value,
+            content: e,
         });
     }
 
@@ -257,14 +257,14 @@ class ChildNew extends Component {
                                                     "video",
                                                     "hr",
                                                 ],
-                                            ],
-                                            [
-                                                "image",
                                                 [
-                                                    "resizeFull",
-                                                    "resizeHalf",
-                                                    "resizeQuarter",
-                                                    "resizeNone",
+                                                    "image",
+                                                    [
+                                                        "resizeFull",
+                                                        "resizeHalf",
+                                                        "resizeQuarter",
+                                                        "resizeNone",
+                                                    ],
                                                 ],
                                             ],
                                             [
