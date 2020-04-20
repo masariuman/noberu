@@ -29,17 +29,17 @@
 </style>
 <table>
     <tr>
-        <td><a href="http://translation.masariuman.xyz/{{$url}}"><img src="{{$thumb}}" /></a></td>
+        <td><a href="http://translation.masariuman.com/{{$url}}"><img src="{{$thumb}}" /></a></td>
         <td style="padding-left:30px;">
             <h1 style="text-align:center;"> Update terbaru dari {{$titleparent}} </h1>
             <hr />
             <p style="font-weight:bold;">
-                Update terbaru telah keluar lho dengan judul <a href="http://translation.masariuman.xyz/{{$url}}">{{$titlechild}}</a>
+                Update terbaru telah keluar lho dengan judul <a href="http://translation.masariuman.com/{{$url}}">{{$titlechild}}</a>
             <p>
                 Untuk menuju laman update terbaru, Silahkan klik link di atas atau tombol berikut.
             </p>
             <p style="text-align:center;">
-                <a href="http://translation.masariuman.xyz/{{$url}}" style="box-shadow: 0px 10px 14px -7px #276873;
+                <a href="http://translation.masariuman.com/{{$url}}" style="box-shadow: 0px 10px 14px -7px #276873;
                 background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
                 background-color:#599bb3;
                 border-radius:8px;
